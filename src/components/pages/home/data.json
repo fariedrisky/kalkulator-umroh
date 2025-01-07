@@ -1,0 +1,1156 @@
+[
+	{
+		"hotel_id": 1970986,
+		"accessibilityLabel": "Swissotel Al Maqam Makkah.\n5 out of 5 stars.\n8.1 Very Good 34171 reviews.\n‎Ajyad, Mecca‬ • ‎200 m from Masjid Al Haram‬.\n Hotel room : 2 beds.\n40107076 IDR.\n+8322218 IDR taxes and charges.\nNo prepayment needed.",
+		"property": {
+			"currency": "SAR",
+			"qualityClass": 0,
+			"reviewScoreWord": "Very Good",
+			"reviewScore": 8.1,
+			"checkinDate": "2025-01-05",
+			"reviewCount": 34171,
+			"ufi": -3096949,
+			"propertyClass": 5,
+			"checkout": {
+				"fromTime": "00:00",
+				"untilTime": "12:00"
+			},
+			"wishlistName": "Mecca",
+			"longitude": 39.8253214359283,
+			"position": 0,
+			"checkin": {
+				"fromTime": "16:00",
+				"untilTime": "00:00"
+			},
+			"checkoutDate": "2025-01-13",
+			"countryCode": "sa",
+			"name": "Swissotel Al Maqam Makkah",
+			"blockIds": ["197098603_399442365_2_41_0"],
+			"accuratePropertyClass": 5,
+			"rankingPosition": 0,
+			"latitude": 21.4201876195914,
+			"isFirstPage": true,
+			"priceBreakdown": {
+				"taxExceptions": [],
+				"grossPrice": {
+					"currency": "IDR",
+					"value": 40107075.8022455
+				},
+				"excludedPrice": {
+					"currency": "IDR",
+					"value": 8322218.22896595
+				},
+				"benefitBadges": []
+			},
+			"photoUrls": [
+				"https://cf.bstatic.com/xdata/images/hotel/square500/558208057.jpg?k=c5fe40806de2265b95f296bb09964a91896f313beeda950e4ec85ddea721461c&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square1024/558208057.jpg?k=c5fe40806de2265b95f296bb09964a91896f313beeda950e4ec85ddea721461c&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square2000/558208057.jpg?k=c5fe40806de2265b95f296bb09964a91896f313beeda950e4ec85ddea721461c&o="
+			],
+			"optOutFromGalleryChanges": 0,
+			"mainPhotoId": 558208057,
+			"id": 1970986
+		}
+	},
+	{
+		"hotel_id": 269009,
+		"accessibilityLabel": "Makkah Clock Royal Tower, A Fairmont Hotel.\n5 out of 5 stars.\n8.3 Very Good 25428 reviews.\n‎Ajyad, Mecca‬ • ‎250 m from Masjid Al Haram‬.\n Hotel room : 2 beds.\n46510732 IDR.\n+9650977 IDR taxes and charges.\nNo prepayment needed.",
+		"property": {
+			"reviewScoreWord": "Very Good",
+			"checkinDate": "2025-01-05",
+			"reviewScore": 8.3,
+			"reviewCount": 25428,
+			"currency": "SAR",
+			"qualityClass": 0,
+			"propertyClass": 5,
+			"ufi": -3096949,
+			"checkout": {
+				"untilTime": "12:00",
+				"fromTime": "11:00"
+			},
+			"position": 1,
+			"checkin": {
+				"fromTime": "16:00",
+				"untilTime": "00:00"
+			},
+			"longitude": 39.8255829513073,
+			"wishlistName": "Mecca",
+			"blockIds": ["26900917_389344425_2_41_0"],
+			"accuratePropertyClass": 5,
+			"countryCode": "sa",
+			"checkoutDate": "2025-01-13",
+			"name": "Makkah Clock Royal Tower, A Fairmont Hotel",
+			"isFirstPage": true,
+			"latitude": 21.4196957213229,
+			"rankingPosition": 1,
+			"photoUrls": [
+				"https://cf.bstatic.com/xdata/images/hotel/square500/515872799.jpg?k=9b9abbb9257668dc47d9bc98748ad418f2dfbc86705d818b8bb3e5ad7253d691&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square1024/515872799.jpg?k=9b9abbb9257668dc47d9bc98748ad418f2dfbc86705d818b8bb3e5ad7253d691&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square2000/515872799.jpg?k=9b9abbb9257668dc47d9bc98748ad418f2dfbc86705d818b8bb3e5ad7253d691&o="
+			],
+			"priceBreakdown": {
+				"taxExceptions": [],
+				"grossPrice": {
+					"value": 46510732.357368,
+					"currency": "IDR"
+				},
+				"excludedPrice": {
+					"currency": "IDR",
+					"value": 9650976.96415386
+				},
+				"benefitBadges": []
+			},
+			"mainPhotoId": 515872799,
+			"id": 269009,
+			"optOutFromGalleryChanges": 0
+		}
+	},
+	{
+		"hotel_id": 355047,
+		"accessibilityLabel": "Pullman ZamZam Makkah.\n5 out of 5 stars.\n6.8 Pleasant 20817 reviews.\n‎Ajyad, Mecca‬ • ‎250 m from Masjid Al Haram‬.\n Hotel room : 1 bed.\n37888194 IDR.\n+7861800 IDR taxes and charges.",
+		"property": {
+			"checkinDate": "2025-01-05",
+			"reviewScoreWord": "Pleasant",
+			"reviewScore": 6.8,
+			"reviewCount": 20817,
+			"currency": "SAR",
+			"qualityClass": 0,
+			"propertyClass": 5,
+			"ufi": -3096949,
+			"checkout": {
+				"fromTime": "00:00",
+				"untilTime": "12:00"
+			},
+			"position": 2,
+			"checkin": {
+				"fromTime": "14:00",
+				"untilTime": "00:00"
+			},
+			"longitude": 39.8255708813667,
+			"wishlistName": "Mecca",
+			"blockIds": ["35504750_93782393_2_41_0"],
+			"accuratePropertyClass": 5,
+			"countryCode": "sa",
+			"checkoutDate": "2025-01-13",
+			"name": "Pullman ZamZam Makkah",
+			"isFirstPage": true,
+			"latitude": 21.4196832365737,
+			"rankingPosition": 2,
+			"photoUrls": [
+				"https://cf.bstatic.com/xdata/images/hotel/square500/590603214.jpg?k=c619c7dd398d2221fcca4d5e71286063f662f0f4c4747f81fcf85e86ad9b144b&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square1024/590603214.jpg?k=c619c7dd398d2221fcca4d5e71286063f662f0f4c4747f81fcf85e86ad9b144b&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square2000/590603214.jpg?k=c619c7dd398d2221fcca4d5e71286063f662f0f4c4747f81fcf85e86ad9b144b&o="
+			],
+			"priceBreakdown": {
+				"benefitBadges": [],
+				"excludedPrice": {
+					"value": 7861800.15137098,
+					"currency": "IDR"
+				},
+				"taxExceptions": [],
+				"grossPrice": {
+					"value": 37888193.500583,
+					"currency": "IDR"
+				}
+			},
+			"mainPhotoId": 590603214,
+			"id": 355047,
+			"optOutFromGalleryChanges": 0
+		}
+	},
+	{
+		"hotel_id": 184752,
+		"accessibilityLabel": "Al Marwa Rayhaan by Rotana - Makkah.\n5 out of 5 stars.\n8.1 Very Good 9217 reviews.\n‎Ajyad, Mecca‬ • ‎300 m from Masjid Al Haram‬.\n Private suite – 92 m² : 1 bed • 1 bedroom • 1 living room • 1 bathroom.\nOriginal price 58144020 IDR. Current price 53492499 IDR..\n+12064884 IDR taxes and charges.",
+		"property": {
+			"checkout": {
+				"untilTime": "12:00",
+				"fromTime": "00:00"
+			},
+			"checkin": {
+				"untilTime": "00:00",
+				"fromTime": "16:00"
+			},
+			"position": 3,
+			"longitude": 39.8255909979343,
+			"wishlistName": "Mecca",
+			"reviewCount": 9217,
+			"reviewScoreWord": "Very Good",
+			"reviewScore": 8.1,
+			"checkinDate": "2025-01-05",
+			"qualityClass": 0,
+			"currency": "SAR",
+			"propertyClass": 5,
+			"ufi": -3096949,
+			"photoUrls": [
+				"https://cf.bstatic.com/xdata/images/hotel/square500/497045986.jpg?k=ea3830d2ef3e9129e8d33ecc58f3adf44cb7c228952390df415a890a43771b9d&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square1024/497045986.jpg?k=ea3830d2ef3e9129e8d33ecc58f3adf44cb7c228952390df415a890a43771b9d&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square2000/497045986.jpg?k=ea3830d2ef3e9129e8d33ecc58f3adf44cb7c228952390df415a890a43771b9d&o="
+			],
+			"priceBreakdown": {
+				"excludedPrice": {
+					"currency": "IDR",
+					"value": 12064884.1933804
+				},
+				"benefitBadges": [],
+				"grossPrice": {
+					"value": 53492498.5923372,
+					"currency": "IDR"
+				},
+				"taxExceptions": [],
+				"strikethroughPrice": {
+					"currency": "IDR",
+					"value": 58144020.2090622
+				}
+			},
+			"id": 184752,
+			"mainPhotoId": 497045986,
+			"optOutFromGalleryChanges": 1,
+			"accuratePropertyClass": 5,
+			"blockIds": ["18475205_91466012_2_1_0"],
+			"checkoutDate": "2025-01-13",
+			"countryCode": "sa",
+			"name": "Al Marwa Rayhaan by Rotana - Makkah",
+			"isFirstPage": true,
+			"latitude": 21.4196507762208,
+			"rankingPosition": 3
+		}
+	},
+	{
+		"hotel_id": 269018,
+		"accessibilityLabel": "Raffles Makkah Palace.\n5 out of 5 stars.\n8.9 Excellent 3493 reviews.\n‎Ajyad, Mecca‬ • ‎300 m from Masjid Al Haram‬.\n Private suite : 1 bed.\n68291874 IDR.\n+14170564 IDR taxes and charges.\nNo prepayment needed.",
+		"property": {
+			"priceBreakdown": {
+				"grossPrice": {
+					"value": 68291873.5832084,
+					"currency": "IDR"
+				},
+				"taxExceptions": [],
+				"benefitBadges": [],
+				"excludedPrice": {
+					"value": 14170563.7685157,
+					"currency": "IDR"
+				}
+			},
+			"photoUrls": [
+				"https://cf.bstatic.com/xdata/images/hotel/square500/536626992.jpg?k=d7829eede44d73a2eb609ecb9442102c91eff15f869a6d3584855b6d8d6bd0a9&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square1024/536626992.jpg?k=d7829eede44d73a2eb609ecb9442102c91eff15f869a6d3584855b6d8d6bd0a9&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square2000/536626992.jpg?k=d7829eede44d73a2eb609ecb9442102c91eff15f869a6d3584855b6d8d6bd0a9&o="
+			],
+			"id": 269018,
+			"mainPhotoId": 536626992,
+			"optOutFromGalleryChanges": 0,
+			"checkoutDate": "2025-01-13",
+			"name": "Raffles Makkah Palace",
+			"countryCode": "sa",
+			"blockIds": ["26901815_399442971_2_33_0"],
+			"accuratePropertyClass": 5,
+			"latitude": 21.4196432853692,
+			"isFirstPage": true,
+			"rankingPosition": 4,
+			"checkout": {
+				"fromTime": "12:00",
+				"untilTime": "12:30"
+			},
+			"longitude": 39.8255655169487,
+			"checkin": {
+				"untilTime": "16:30",
+				"fromTime": "16:00"
+			},
+			"position": 4,
+			"wishlistName": "Mecca",
+			"qualityClass": 0,
+			"currency": "SAR",
+			"reviewCount": 3493,
+			"reviewScoreWord": "Excellent",
+			"reviewScore": 8.9,
+			"checkinDate": "2025-01-05",
+			"propertyClass": 5,
+			"ufi": -3096949
+		}
+	},
+	{
+		"hotel_id": 1396427,
+		"accessibilityLabel": "Jabal Omar Hyatt Regency Makkah.\n5 out of 5 stars.\n8.7 Excellent 23693 reviews.\n‎Ajyad, Mecca‬ • ‎350 m from Masjid Al Haram‬.\n Hotel room : 1 bed.\n59582935 IDR.\n+12363459 IDR taxes and charges.\nNo prepayment needed.",
+		"property": {
+			"ufi": -3096949,
+			"propertyClass": 5,
+			"qualityClass": 0,
+			"currency": "SAR",
+			"reviewCount": 23693,
+			"reviewScore": 8.7,
+			"reviewScoreWord": "Excellent",
+			"checkinDate": "2025-01-05",
+			"wishlistName": "Mecca",
+			"longitude": 39.8223978281021,
+			"checkin": {
+				"fromTime": "16:00",
+				"untilTime": "00:00"
+			},
+			"position": 5,
+			"checkout": {
+				"fromTime": "00:00",
+				"untilTime": "12:00"
+			},
+			"rankingPosition": 5,
+			"latitude": 21.4203435285303,
+			"isFirstPage": true,
+			"name": "Jabal Omar Hyatt Regency Makkah",
+			"checkoutDate": "2025-01-13",
+			"countryCode": "sa",
+			"accuratePropertyClass": 5,
+			"blockIds": ["139642709_355668226_2_42_0"],
+			"optOutFromGalleryChanges": 0,
+			"id": 1396427,
+			"mainPhotoId": 110318868,
+			"priceBreakdown": {
+				"grossPrice": {
+					"value": 59582935.1590871,
+					"currency": "IDR"
+				},
+				"taxExceptions": [],
+				"excludedPrice": {
+					"currency": "IDR",
+					"value": 12363459.0455106
+				},
+				"benefitBadges": []
+			},
+			"photoUrls": [
+				"https://cf.bstatic.com/xdata/images/hotel/square500/110318868.jpg?k=4a0065d5845dce1a40ca8479afa45ed43092f0222a24496ecc3d8a00efaf54a8&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square1024/110318868.jpg?k=4a0065d5845dce1a40ca8479afa45ed43092f0222a24496ecc3d8a00efaf54a8&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square2000/110318868.jpg?k=4a0065d5845dce1a40ca8479afa45ed43092f0222a24496ecc3d8a00efaf54a8&o="
+			],
+			"isPreferred": true
+		}
+	},
+	{
+		"hotel_id": 571831,
+		"accessibilityLabel": "Hilton Suites Jabal Omar Makkah.\n5 out of 5 stars.\n8.6 Excellent 7446 reviews.\n‎Ajyad, Mecca‬ • ‎400 m from Masjid Al Haram‬.\nLate Escape Deal.\n2 beds.\n33714801 IDR.\n+6995821 IDR taxes and charges.",
+		"property": {
+			"ufi": -3096949,
+			"propertyClass": 5,
+			"reviewCount": 7446,
+			"reviewScore": 8.6,
+			"reviewScoreWord": "Excellent",
+			"checkinDate": "2025-01-05",
+			"qualityClass": 0,
+			"currency": "SAR",
+			"wishlistName": "Mecca",
+			"checkin": {
+				"fromTime": "16:00",
+				"untilTime": "00:00"
+			},
+			"position": 6,
+			"longitude": 39.8216100185891,
+			"checkout": {
+				"fromTime": "00:00",
+				"untilTime": "12:00"
+			},
+			"rankingPosition": 6,
+			"isFirstPage": true,
+			"latitude": 21.4213264284213,
+			"blockIds": ["57183106_94493893_2_2_0_301212"],
+			"accuratePropertyClass": 5,
+			"countryCode": "sa",
+			"name": "Hilton Suites Jabal Omar Makkah",
+			"checkoutDate": "2025-01-13",
+			"optOutFromGalleryChanges": 0,
+			"id": 571831,
+			"mainPhotoId": 483742572,
+			"photoUrls": [
+				"https://cf.bstatic.com/xdata/images/hotel/square500/483742572.jpg?k=4ee214f6090b2a8a081d008dc1a2c5fb65df7f76f1bce18dda8ffb41be2d9639&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square1024/483742572.jpg?k=4ee214f6090b2a8a081d008dc1a2c5fb65df7f76f1bce18dda8ffb41be2d9639&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square2000/483742572.jpg?k=4ee214f6090b2a8a081d008dc1a2c5fb65df7f76f1bce18dda8ffb41be2d9639&o="
+			],
+			"priceBreakdown": {
+				"benefitBadges": [
+					{
+						"explanation": "Late Escape Deal",
+						"text": "Late Escape Deal",
+						"variant": "constructive",
+						"identifier": "Late Escape Campaign"
+					}
+				],
+				"excludedPrice": {
+					"value": 6995821.25440613,
+					"currency": "IDR"
+				},
+				"taxExceptions": [],
+				"grossPrice": {
+					"currency": "IDR",
+					"value": 33714801.2260536
+				}
+			},
+			"isPreferred": true
+		}
+	},
+	{
+		"hotel_id": 45915,
+		"accessibilityLabel": "Makkah Hotel.\n5 out of 5 stars.\n8.6 Excellent 9031 reviews.\n‎Ajyad, Mecca‬ • ‎400 m from Masjid Al Haram‬.\nLimited-time Deal.\n Hotel room : 1 bed.\nOriginal price 58203301 IDR. Current price 37482926 IDR..\n+8454030 IDR taxes and charges.",
+		"property": {
+			"checkinDate": "2025-01-05",
+			"reviewScoreWord": "Excellent",
+			"reviewScore": 8.6,
+			"reviewCount": 9031,
+			"currency": "SAR",
+			"qualityClass": 0,
+			"propertyClass": 5,
+			"ufi": -3096949,
+			"checkout": {
+				"untilTime": "12:00",
+				"fromTime": "11:30"
+			},
+			"position": 7,
+			"checkin": {
+				"fromTime": "16:00",
+				"untilTime": "23:30"
+			},
+			"longitude": 39.8233124613763,
+			"wishlistName": "Mecca",
+			"blockIds": ["4591550_95461487_2_34_0"],
+			"accuratePropertyClass": 5,
+			"countryCode": "sa",
+			"name": "Makkah Hotel",
+			"checkoutDate": "2025-01-13",
+			"isFirstPage": true,
+			"latitude": 21.4189316527071,
+			"rankingPosition": 7,
+			"isPreferred": true,
+			"photoUrls": [
+				"https://cf.bstatic.com/xdata/images/hotel/square500/277338135.jpg?k=e9b16850c3ed4b45fa6ff60067738e87f0d75add4ff498036cb35d8ce2d73277&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square1024/277338135.jpg?k=e9b16850c3ed4b45fa6ff60067738e87f0d75add4ff498036cb35d8ce2d73277&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square2000/277338135.jpg?k=e9b16850c3ed4b45fa6ff60067738e87f0d75add4ff498036cb35d8ce2d73277&o="
+			],
+			"priceBreakdown": {
+				"strikethroughPrice": {
+					"currency": "IDR",
+					"value": 58203301.3493254
+				},
+				"taxExceptions": [],
+				"grossPrice": {
+					"value": 37482926.0689655,
+					"currency": "IDR"
+				},
+				"benefitBadges": [
+					{
+						"identifier": "Limited Time Deal",
+						"text": "Limited-time Deal",
+						"explanation": "Limited-time Deal",
+						"variant": "constructive"
+					}
+				],
+				"excludedPrice": {
+					"currency": "IDR",
+					"value": 8454029.52098951
+				}
+			},
+			"mainPhotoId": 277338135,
+			"id": 45915,
+			"optOutFromGalleryChanges": 0
+		}
+	},
+	{
+		"hotel_id": 250855,
+		"accessibilityLabel": "Makkah Towers.\n5 out of 5 stars.\n7.7 Good 10049 reviews.\n‎Ajyad, Mecca‬ • ‎400 m from Masjid Al Haram‬.\nMobile-only price.\n Hotel room : 3 beds.\nOriginal price 44674267 IDR. Current price 36990311 IDR..\n+8342919 IDR taxes and charges.",
+		"property": {
+			"latitude": 21.4189304042256,
+			"isFirstPage": true,
+			"rankingPosition": 8,
+			"name": "Makkah Towers",
+			"countryCode": "sa",
+			"checkoutDate": "2025-01-13",
+			"blockIds": ["25085509_94366062_2_34_0"],
+			"accuratePropertyClass": 5,
+			"mainPhotoId": 89694431,
+			"id": 250855,
+			"optOutFromGalleryChanges": 0,
+			"isPreferred": true,
+			"priceBreakdown": {
+				"strikethroughPrice": {
+					"value": 44674267.3023488,
+					"currency": "IDR"
+				},
+				"grossPrice": {
+					"currency": "IDR",
+					"value": 36990310.5717675
+				},
+				"taxExceptions": [],
+				"benefitBadges": [
+					{
+						"identifier": "Mobile Rate",
+						"variant": "constructive",
+						"text": "Mobile-only price",
+						"explanation": "Mobile-only price"
+					}
+				],
+				"excludedPrice": {
+					"currency": "IDR",
+					"value": 8342919.41871365
+				}
+			},
+			"photoUrls": [
+				"https://cf.bstatic.com/xdata/images/hotel/square500/89694431.jpg?k=81b745a7c99d158832257c67e0c5259cbf1ad9dfb963a06c6e73c27304ce039e&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square1024/89694431.jpg?k=81b745a7c99d158832257c67e0c5259cbf1ad9dfb963a06c6e73c27304ce039e&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square2000/89694431.jpg?k=81b745a7c99d158832257c67e0c5259cbf1ad9dfb963a06c6e73c27304ce039e&o="
+			],
+			"propertyClass": 5,
+			"ufi": -3096949,
+			"currency": "SAR",
+			"qualityClass": 0,
+			"reviewScoreWord": "Good",
+			"checkinDate": "2025-01-05",
+			"reviewScore": 7.7,
+			"reviewCount": 10049,
+			"longitude": 39.8233138024806,
+			"position": 8,
+			"checkin": {
+				"untilTime": "23:30",
+				"fromTime": "16:00"
+			},
+			"wishlistName": "Mecca",
+			"checkout": {
+				"untilTime": "12:00",
+				"fromTime": "11:30"
+			}
+		}
+	},
+	{
+		"hotel_id": 238661,
+		"accessibilityLabel": "Le Meridien Makkah.\n5 out of 5 stars.\n8.0 Very Good 4563 reviews.\n‎Ajyad, Mecca‬ • ‎450 m from Masjid Al Haram‬.\n Hotel room : 2 beds.\n41604582 IDR.\n+8632951 IDR taxes and charges.",
+		"property": {
+			"accuratePropertyClass": 5,
+			"blockIds": ["23866116_106137689_2_42_0"],
+			"countryCode": "sa",
+			"checkoutDate": "2025-01-13",
+			"name": "Le Meridien Makkah",
+			"rankingPosition": 9,
+			"isFirstPage": true,
+			"latitude": 21.4203274482384,
+			"photoUrls": [
+				"https://cf.bstatic.com/xdata/images/hotel/square500/630017047.jpg?k=1c258bfad886a3d2c57a7433dac30849eb1c36cdb352f0d74a48f668282ef08d&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square1024/630017047.jpg?k=1c258bfad886a3d2c57a7433dac30849eb1c36cdb352f0d74a48f668282ef08d&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square2000/630017047.jpg?k=1c258bfad886a3d2c57a7433dac30849eb1c36cdb352f0d74a48f668282ef08d&o="
+			],
+			"priceBreakdown": {
+				"grossPrice": {
+					"currency": "IDR",
+					"value": 41604582.0756289
+				},
+				"taxExceptions": [],
+				"excludedPrice": {
+					"currency": "IDR",
+					"value": 8632950.78069299
+				},
+				"benefitBadges": []
+			},
+			"isPreferred": true,
+			"optOutFromGalleryChanges": 0,
+			"mainPhotoId": 630017047,
+			"id": 238661,
+			"reviewScore": 8,
+			"reviewScoreWord": "Very Good",
+			"checkinDate": "2025-01-05",
+			"reviewCount": 4563,
+			"currency": "SAR",
+			"qualityClass": 0,
+			"ufi": -3096949,
+			"propertyClass": 5,
+			"checkout": {
+				"fromTime": "00:00",
+				"untilTime": "12:00"
+			},
+			"wishlistName": "Mecca",
+			"position": 9,
+			"checkin": {
+				"untilTime": "00:00",
+				"fromTime": "16:00"
+			},
+			"longitude": 39.8290792107582
+		}
+	},
+	{
+		"hotel_id": 416622,
+		"accessibilityLabel": "Elaf Kinda Hotel.\n4 out of 5 stars.\n7.8 Good 9058 reviews.\n‎Ajyad, Mecca‬ • ‎450 m from Masjid Al Haram‬.\n Private suite : 2 beds.\nOriginal price 53460810 IDR. Current price 44265551 IDR..\n+9983806 IDR taxes and charges.",
+		"property": {
+			"rankingPosition": 10,
+			"latitude": 21.4183548531629,
+			"isFirstPage": true,
+			"name": "Elaf Kinda Hotel",
+			"checkoutDate": "2025-01-13",
+			"countryCode": "sa",
+			"accuratePropertyClass": 4,
+			"blockIds": ["41662231_385016793_3_40_0"],
+			"optOutFromGalleryChanges": 0,
+			"id": 416622,
+			"mainPhotoId": 68829758,
+			"priceBreakdown": {
+				"strikethroughPrice": {
+					"currency": "IDR",
+					"value": 53460810.1282692
+				},
+				"taxExceptions": [],
+				"grossPrice": {
+					"value": 44265550.7862069,
+					"currency": "IDR"
+				},
+				"excludedPrice": {
+					"value": 9983806.29145427,
+					"currency": "IDR"
+				},
+				"benefitBadges": []
+			},
+			"photoUrls": [
+				"https://cf.bstatic.com/xdata/images/hotel/square500/68829758.jpg?k=03750d55eb87b3f23bffff84cf194b2cf8dcbbdd07e0b27c17d4f3d3af71e65f&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square1024/68829758.jpg?k=03750d55eb87b3f23bffff84cf194b2cf8dcbbdd07e0b27c17d4f3d3af71e65f&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square2000/68829758.jpg?k=03750d55eb87b3f23bffff84cf194b2cf8dcbbdd07e0b27c17d4f3d3af71e65f&o="
+			],
+			"ufi": -3096949,
+			"propertyClass": 4,
+			"qualityClass": 0,
+			"currency": "SAR",
+			"reviewCount": 9058,
+			"reviewScoreWord": "Good",
+			"checkinDate": "2025-01-05",
+			"reviewScore": 7.8,
+			"wishlistName": "Mecca",
+			"longitude": 39.8237925767899,
+			"checkin": {
+				"fromTime": "16:00",
+				"untilTime": "00:00"
+			},
+			"position": 10,
+			"checkout": {
+				"fromTime": "12:00",
+				"untilTime": "12:30"
+			}
+		}
+	},
+	{
+		"hotel_id": 9467967,
+		"accessibilityLabel": "Jumeirah Jabal Omar Makkah.\n5 out of 5 stars.\n8.9 Excellent 6089 reviews.\n‎Ajyad, Mecca‬ • ‎500 m from Masjid Al Haram‬.\n Hotel room : 1 bed.\n28110039 IDR.\n+5832833 IDR taxes and charges.",
+		"property": {
+			"blockIds": ["946796710_367241772_2_42_0_75226"],
+			"accuratePropertyClass": 5,
+			"name": "Jumeirah Jabal Omar Makkah",
+			"checkoutDate": "2025-01-13",
+			"countryCode": "sa",
+			"isFirstPage": true,
+			"latitude": 21.4188966314715,
+			"rankingPosition": 11,
+			"isPreferred": true,
+			"photoUrls": [
+				"https://cf.bstatic.com/xdata/images/hotel/square500/511152045.jpg?k=380d4c6416c4e51f37728c3a4b7caea5e670f94bb05e0061a5b2ea6b62449062&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square1024/511152045.jpg?k=380d4c6416c4e51f37728c3a4b7caea5e670f94bb05e0061a5b2ea6b62449062&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square2000/511152045.jpg?k=380d4c6416c4e51f37728c3a4b7caea5e670f94bb05e0061a5b2ea6b62449062&o="
+			],
+			"priceBreakdown": {
+				"taxExceptions": [],
+				"grossPrice": {
+					"currency": "IDR",
+					"value": 28110038.8738964
+				},
+				"excludedPrice": {
+					"currency": "IDR",
+					"value": 5832833.0663335
+				},
+				"benefitBadges": []
+			},
+			"id": 9467967,
+			"mainPhotoId": 511152045,
+			"optOutFromGalleryChanges": 0,
+			"reviewCount": 6089,
+			"reviewScore": 8.9,
+			"reviewScoreWord": "Excellent",
+			"checkinDate": "2025-01-05",
+			"qualityClass": 0,
+			"currency": "SAR",
+			"propertyClass": 5,
+			"ufi": -3096949,
+			"checkout": {
+				"fromTime": "00:00",
+				"untilTime": "12:00"
+			},
+			"checkin": {
+				"untilTime": "00:00",
+				"fromTime": "16:00"
+			},
+			"position": 11,
+			"longitude": 39.8222368089981,
+			"wishlistName": "Mecca"
+		}
+	},
+	{
+		"hotel_id": 1442850,
+		"accessibilityLabel": "Conrad Jabal Omar Makkah.\n5 out of 5 stars.\n8.6 Excellent 7102 reviews.\n‎Ajyad, Mecca‬ • ‎500 m from Masjid Al Haram‬.\nLate Escape Deal.\n2 beds.\n36463377 IDR.\n+7566151 IDR taxes and charges.",
+		"property": {
+			"checkout": {
+				"fromTime": "00:00",
+				"untilTime": "12:00"
+			},
+			"wishlistName": "Mecca",
+			"checkin": {
+				"untilTime": "00:00",
+				"fromTime": "16:00"
+			},
+			"position": 12,
+			"longitude": 39.8217455681229,
+			"reviewCount": 7102,
+			"checkinDate": "2025-01-05",
+			"reviewScoreWord": "Excellent",
+			"reviewScore": 8.6,
+			"qualityClass": 0,
+			"currency": "SAR",
+			"ufi": -3096949,
+			"propertyClass": 5,
+			"photoUrls": [
+				"https://cf.bstatic.com/xdata/images/hotel/square500/483752681.jpg?k=cb9fd081a62dfe21071784e11c7557497ff697c8c8dca884a05860d9a98d35de&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square1024/483752681.jpg?k=cb9fd081a62dfe21071784e11c7557497ff697c8c8dca884a05860d9a98d35de&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square2000/483752681.jpg?k=cb9fd081a62dfe21071784e11c7557497ff697c8c8dca884a05860d9a98d35de&o="
+			],
+			"priceBreakdown": {
+				"benefitBadges": [
+					{
+						"explanation": "Late Escape Deal",
+						"text": "Late Escape Deal",
+						"variant": "constructive",
+						"identifier": "Late Escape Campaign"
+					}
+				],
+				"excludedPrice": {
+					"currency": "IDR",
+					"value": 7566150.66183695
+				},
+				"grossPrice": {
+					"value": 36463376.6835516,
+					"currency": "IDR"
+				},
+				"taxExceptions": []
+			},
+			"isPreferred": true,
+			"optOutFromGalleryChanges": 1,
+			"id": 1442850,
+			"mainPhotoId": 483752681,
+			"blockIds": ["144285010_94599333_2_2_0_301226"],
+			"accuratePropertyClass": 5,
+			"checkoutDate": "2025-01-13",
+			"countryCode": "sa",
+			"name": "Conrad Jabal Omar Makkah",
+			"rankingPosition": 12,
+			"isFirstPage": true,
+			"latitude": 21.4191913937226
+		}
+	},
+	{
+		"hotel_id": 2258749,
+		"accessibilityLabel": "Hilton Hotel & Convention Jabal Omar Makkah.\n5 out of 5 stars.\n8.2 Very Good 13372 reviews.\n‎Ajyad, Mecca‬ • ‎550 m from Masjid Al Haram‬.\nLate Escape Deal.\n2 beds.\n25286273 IDR.\n+5246902 IDR taxes and charges.",
+		"property": {
+			"optOutFromGalleryChanges": 0,
+			"mainPhotoId": 483742485,
+			"id": 2258749,
+			"priceBreakdown": {
+				"excludedPrice": {
+					"value": 5246901.72505654,
+					"currency": "IDR"
+				},
+				"benefitBadges": [
+					{
+						"variant": "constructive",
+						"text": "Late Escape Deal",
+						"explanation": "Late Escape Deal",
+						"identifier": "Late Escape Campaign"
+					}
+				],
+				"taxExceptions": [],
+				"grossPrice": {
+					"value": 25286273.3737665,
+					"currency": "IDR"
+				}
+			},
+			"photoUrls": [
+				"https://cf.bstatic.com/xdata/images/hotel/square500/483742485.jpg?k=5882fe3947dc4f3ecf052b6ec5122e61691097b6127622eff7bdb15036ca75e0&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square1024/483742485.jpg?k=5882fe3947dc4f3ecf052b6ec5122e61691097b6127622eff7bdb15036ca75e0&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square2000/483742485.jpg?k=5882fe3947dc4f3ecf052b6ec5122e61691097b6127622eff7bdb15036ca75e0&o="
+			],
+			"isPreferred": true,
+			"rankingPosition": 13,
+			"latitude": 21.423,
+			"isFirstPage": true,
+			"countryCode": "sa",
+			"checkoutDate": "2025-01-13",
+			"name": "Hilton Hotel & Convention Jabal Omar Makkah",
+			"blockIds": ["225874906_99025888_2_2_0_301245"],
+			"accuratePropertyClass": 5,
+			"wishlistName": "Mecca",
+			"longitude": 39.820047,
+			"position": 13,
+			"checkin": {
+				"fromTime": "16:00",
+				"untilTime": "00:00"
+			},
+			"checkout": {
+				"fromTime": "00:00",
+				"untilTime": "12:00"
+			},
+			"ufi": -3096949,
+			"propertyClass": 5,
+			"currency": "SAR",
+			"qualityClass": 0,
+			"reviewScoreWord": "Very Good",
+			"checkinDate": "2025-01-05",
+			"reviewScore": 8.2,
+			"reviewCount": 13372
+		}
+	},
+	{
+		"hotel_id": 10708093,
+		"accessibilityLabel": "فندق سنود أجياد برج 1.\n6.3 Pleasant 2953 reviews.\n‎Ajyad, Mecca‬ • ‎550 m from Masjid Al Haram‬.\n Hotel room : 3 beds.\nOriginal price 41389014 IDR. Current price 20280617 IDR..\n+3549108 IDR taxes and charges.",
+		"property": {
+			"photoUrls": [
+				"https://cf.bstatic.com/xdata/images/hotel/square500/489470015.jpg?k=dddd0c4cd9622ddcd4a8f776660d15c45e4f4ed9df205bb203bb098857f4797c&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square1024/489470015.jpg?k=dddd0c4cd9622ddcd4a8f776660d15c45e4f4ed9df205bb203bb098857f4797c&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square2000/489470015.jpg?k=dddd0c4cd9622ddcd4a8f776660d15c45e4f4ed9df205bb203bb098857f4797c&o="
+			],
+			"priceBreakdown": {
+				"strikethroughPrice": {
+					"value": 41389014.2928536,
+					"currency": "IDR"
+				},
+				"taxExceptions": [],
+				"grossPrice": {
+					"value": 20280617.0034983,
+					"currency": "IDR"
+				},
+				"benefitBadges": [],
+				"excludedPrice": {
+					"currency": "IDR",
+					"value": 3549107.97561219
+				}
+			},
+			"optOutFromGalleryChanges": 1,
+			"mainPhotoId": 489470015,
+			"id": 10708093,
+			"blockIds": ["1070809302_379593736_0_0_0"],
+			"accuratePropertyClass": 0,
+			"name": "فندق سنود أجياد برج 1",
+			"countryCode": "sa",
+			"checkoutDate": "2025-01-13",
+			"rankingPosition": 14,
+			"isFirstPage": true,
+			"latitude": 21.4207888378072,
+			"checkout": {
+				"untilTime": "14:00",
+				"fromTime": "11:00"
+			},
+			"wishlistName": "Mecca",
+			"position": 14,
+			"checkin": {
+				"untilTime": "23:00",
+				"fromTime": "16:00"
+			},
+			"longitude": 39.8305945861548,
+			"reviewScore": 6.3,
+			"reviewScoreWord": "Pleasant",
+			"checkinDate": "2025-01-05",
+			"reviewCount": 2953,
+			"currency": "SAR",
+			"qualityClass": 0,
+			"ufi": -3096949,
+			"propertyClass": 0
+		}
+	},
+	{
+		"hotel_id": 247346,
+		"accessibilityLabel": "Makarem Ajyad Makkah Hotel.\n5 out of 5 stars.\n8.3 Very Good 7865 reviews.\n‎Ajyad, Mecca‬ • ‎650 m from Masjid Al Haram‬.\n Private suite – 105 m² : 1 bed • 1 bedroom • 1 living room • 2 bathrooms.\n57772166 IDR.\n+11987724 IDR taxes and charges.\nFree cancellation.\nNo prepayment needed.",
+		"property": {
+			"rankingPosition": 15,
+			"latitude": 21.4170601671044,
+			"isFirstPage": true,
+			"countryCode": "sa",
+			"checkoutDate": "2025-01-13",
+			"name": "Makarem Ajyad Makkah Hotel",
+			"blockIds": ["24734626_401823929_2_34_0"],
+			"accuratePropertyClass": 5,
+			"optOutFromGalleryChanges": 0,
+			"id": 247346,
+			"mainPhotoId": 92884414,
+			"priceBreakdown": {
+				"grossPrice": {
+					"currency": "IDR",
+					"value": 57772165.7837748
+				},
+				"taxExceptions": [],
+				"excludedPrice": {
+					"currency": "IDR",
+					"value": 11987724.4001333
+				},
+				"benefitBadges": []
+			},
+			"photoUrls": [
+				"https://cf.bstatic.com/xdata/images/hotel/square500/92884414.jpg?k=6f5ef35870db6029e72e3ac4cc4fae77a37aceaff22b556c0f91455b01bf4a5c&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square1024/92884414.jpg?k=6f5ef35870db6029e72e3ac4cc4fae77a37aceaff22b556c0f91455b01bf4a5c&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square2000/92884414.jpg?k=6f5ef35870db6029e72e3ac4cc4fae77a37aceaff22b556c0f91455b01bf4a5c&o="
+			],
+			"isPreferred": true,
+			"ufi": -3096949,
+			"propertyClass": 5,
+			"qualityClass": 0,
+			"currency": "SAR",
+			"reviewCount": 7865,
+			"reviewScoreWord": "Very Good",
+			"reviewScore": 8.3,
+			"checkinDate": "2025-01-05",
+			"wishlistName": "Mecca",
+			"longitude": 39.8282584547997,
+			"checkin": {
+				"untilTime": "17:00",
+				"fromTime": "16:00"
+			},
+			"position": 15,
+			"checkout": {
+				"fromTime": "12:00",
+				"untilTime": "12:30"
+			}
+		}
+	},
+	{
+		"hotel_id": 10287593,
+		"accessibilityLabel": "Al Barakah Mawaddah Hotel.\n2 out of 5 stars.\n5.7 Okay 446 reviews.\n‎Ajyad, Mecca‬ • ‎650 m from Masjid Al Haram‬.\n Hotel room : 3 beds.\nOriginal price 18969965 IDR. Current price 10122373 IDR..\nIncludes taxes and fees.",
+		"property": {
+			"checkout": {
+				"untilTime": "12:00",
+				"fromTime": "06:00"
+			},
+			"position": 16,
+			"checkin": {
+				"untilTime": "22:00",
+				"fromTime": "16:00"
+			},
+			"longitude": 39.831421631244,
+			"wishlistName": "Mecca",
+			"reviewScore": 5.7,
+			"reviewScoreWord": "Okay",
+			"checkinDate": "2025-01-05",
+			"reviewCount": 446,
+			"currency": "SAR",
+			"qualityClass": 0,
+			"propertyClass": 2,
+			"ufi": -3096949,
+			"photoUrls": [
+				"https://cf.bstatic.com/xdata/images/hotel/square500/482705359.jpg?k=4242072147c13ce249f2698754afb3b5c9c81436a4568d45dbdc0ab4f7229d7d&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square1024/482705359.jpg?k=4242072147c13ce249f2698754afb3b5c9c81436a4568d45dbdc0ab4f7229d7d&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square2000/482705359.jpg?k=4242072147c13ce249f2698754afb3b5c9c81436a4568d45dbdc0ab4f7229d7d&o="
+			],
+			"priceBreakdown": {
+				"strikethroughPrice": {
+					"currency": "IDR",
+					"value": 18969964.8842246
+				},
+				"benefitBadges": [],
+				"grossPrice": {
+					"value": 10122373.2622222,
+					"currency": "IDR"
+				},
+				"taxExceptions": []
+			},
+			"mainPhotoId": 482705359,
+			"id": 10287593,
+			"optOutFromGalleryChanges": 0,
+			"blockIds": ["1028759302_402389666_3_0_0"],
+			"accuratePropertyClass": 2,
+			"checkoutDate": "2025-01-13",
+			"countryCode": "sa",
+			"name": "Al Barakah Mawaddah Hotel",
+			"isFirstPage": true,
+			"latitude": 21.420765155872,
+			"rankingPosition": 16
+		}
+	},
+	{
+		"hotel_id": 5897389,
+		"accessibilityLabel": "Maysan Al Mashaer.\n3 out of 5 stars.\n7.9 Good 132 reviews.\n‎Ajyad, Mecca‬ • ‎700 m from Masjid Al Haram‬.\nMobile-only price.\n Hotel room : 3 beds.\nOriginal price 25566339 IDR. Current price 23009705 IDR..\n+4112985 IDR taxes and charges.\nFree cancellation.\nNo prepayment needed.",
+		"property": {
+			"ufi": -3096949,
+			"propertyClass": 3,
+			"reviewCount": 132,
+			"reviewScoreWord": "Good",
+			"checkinDate": "2025-01-05",
+			"reviewScore": 7.9,
+			"qualityClass": 0,
+			"currency": "SAR",
+			"wishlistName": "Mecca",
+			"checkin": {
+				"fromTime": "16:00",
+				"untilTime": "18:00"
+			},
+			"position": 17,
+			"longitude": 39.8285087010803,
+			"checkout": {
+				"fromTime": "01:00",
+				"untilTime": "12:00"
+			},
+			"rankingPosition": 17,
+			"isFirstPage": true,
+			"latitude": 21.4166756375769,
+			"blockIds": ["589738902_404249344_0_40_0"],
+			"accuratePropertyClass": 3,
+			"name": "Maysan Al Mashaer",
+			"checkoutDate": "2025-01-13",
+			"countryCode": "sa",
+			"optOutFromGalleryChanges": 0,
+			"id": 5897389,
+			"mainPhotoId": 623429089,
+			"photoUrls": [
+				"https://cf.bstatic.com/xdata/images/hotel/square500/623429089.jpg?k=44351663f9e89ab1f66dc243fe1d0fac47d127bd5c393ad8fe0704e42524b6c3&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square1024/623429089.jpg?k=44351663f9e89ab1f66dc243fe1d0fac47d127bd5c393ad8fe0704e42524b6c3&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square2000/623429089.jpg?k=44351663f9e89ab1f66dc243fe1d0fac47d127bd5c393ad8fe0704e42524b6c3&o="
+			],
+			"priceBreakdown": {
+				"strikethroughPrice": {
+					"currency": "IDR",
+					"value": 25566339.0371481
+				},
+				"excludedPrice": {
+					"value": 4112984.7926012,
+					"currency": "IDR"
+				},
+				"benefitBadges": [
+					{
+						"identifier": "Mobile Rate",
+						"text": "Mobile-only price",
+						"explanation": "Mobile-only price",
+						"variant": "constructive"
+					}
+				],
+				"taxExceptions": [],
+				"grossPrice": {
+					"value": 23009705.1334333,
+					"currency": "IDR"
+				}
+			}
+		}
+	},
+	{
+		"hotel_id": 3129791,
+		"accessibilityLabel": "Shaza Makkah.\n5 out of 5 stars.\n8.4 Very Good 3813 reviews.\n‎Mecca‬ • ‎700 m from Masjid Al Haram‬.\nMobile-only price.\n Private suite : 4 beds.\nOriginal price 34684856 IDR. Current price 28719061 IDR..\n+6477397 IDR taxes and charges.",
+		"property": {
+			"ufi": -3096949,
+			"propertyClass": 5,
+			"reviewScoreWord": "Very Good",
+			"reviewScore": 8.4,
+			"checkinDate": "2025-01-05",
+			"reviewCount": 3813,
+			"currency": "SAR",
+			"qualityClass": 0,
+			"wishlistName": "Mecca",
+			"position": 18,
+			"checkin": {
+				"fromTime": "16:00",
+				"untilTime": "18:00"
+			},
+			"longitude": 39.8195709606438,
+			"checkout": {
+				"untilTime": "12:00",
+				"fromTime": "00:00"
+			},
+			"rankingPosition": 18,
+			"isFirstPage": true,
+			"latitude": 21.4257050495547,
+			"accuratePropertyClass": 5,
+			"blockIds": ["312979112_368013312_3_1_0"],
+			"countryCode": "sa",
+			"name": "Shaza Makkah",
+			"checkoutDate": "2025-01-13",
+			"optOutFromGalleryChanges": 0,
+			"mainPhotoId": 514993756,
+			"id": 3129791,
+			"photoUrls": [
+				"https://cf.bstatic.com/xdata/images/hotel/square500/514993756.jpg?k=cbe0bfdb40767b46ad1f9efb92cc7101f9ab1e3e3bd202770e12a617dbe4e5a5&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square1024/514993756.jpg?k=cbe0bfdb40767b46ad1f9efb92cc7101f9ab1e3e3bd202770e12a617dbe4e5a5&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square2000/514993756.jpg?k=cbe0bfdb40767b46ad1f9efb92cc7101f9ab1e3e3bd202770e12a617dbe4e5a5&o="
+			],
+			"priceBreakdown": {
+				"strikethroughPrice": {
+					"currency": "IDR",
+					"value": 34684856.2485424
+				},
+				"benefitBadges": [
+					{
+						"identifier": "Mobile Rate",
+						"variant": "constructive",
+						"text": "Mobile-only price",
+						"explanation": "Mobile-only price"
+					}
+				],
+				"excludedPrice": {
+					"value": 6477396.90441529,
+					"currency": "IDR"
+				},
+				"grossPrice": {
+					"currency": "IDR",
+					"value": 28719060.9737931
+				},
+				"taxExceptions": []
+			}
+		}
+	},
+	{
+		"hotel_id": 5148243,
+		"accessibilityLabel": "Doubletree By Hilton Jabal Omar Makkah.\n4 out of 5 stars.\n8.5 Very Good 8140 reviews.\n‎Ajyad, Mecca‬ • ‎750 m from Masjid Al Haram‬.\nLate Escape Deal.\n1 bed.\n22911579 IDR.\n+4754153 IDR taxes and charges.",
+		"property": {
+			"optOutFromGalleryChanges": 1,
+			"id": 5148243,
+			"mainPhotoId": 483742076,
+			"photoUrls": [
+				"https://cf.bstatic.com/xdata/images/hotel/square500/483742076.jpg?k=c9fc0ddc717adc878563254984f039e7409cd6f90b42ab878378f045835060a7&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square1024/483742076.jpg?k=c9fc0ddc717adc878563254984f039e7409cd6f90b42ab878378f045835060a7&o=",
+				"https://cf.bstatic.com/xdata/images/hotel/square2000/483742076.jpg?k=c9fc0ddc717adc878563254984f039e7409cd6f90b42ab878378f045835060a7&o="
+			],
+			"priceBreakdown": {
+				"taxExceptions": [],
+				"grossPrice": {
+					"value": 22911578.678714,
+					"currency": "IDR"
+				},
+				"excludedPrice": {
+					"value": 4754152.57583315,
+					"currency": "IDR"
+				},
+				"benefitBadges": [
+					{
+						"identifier": "Late Escape Campaign",
+						"variant": "constructive",
+						"explanation": "Late Escape Deal",
+						"text": "Late Escape Deal"
+					}
+				]
+			},
+			"isPreferred": true,
+			"rankingPosition": 19,
+			"isFirstPage": true,
+			"latitude": 21.423,
+			"accuratePropertyClass": 4,
+			"blockIds": ["514824301_178762477_2_2_0_301264"],
+			"checkoutDate": "2025-01-13",
+			"countryCode": "sa",
+			"name": "Doubletree By Hilton Jabal Omar Makkah",
+			"wishlistName": "Mecca",
+			"checkin": {
+				"untilTime": "00:00",
+				"fromTime": "16:00"
+			},
+			"position": 19,
+			"longitude": 39.818293,
+			"checkout": {
+				"untilTime": "12:00",
+				"fromTime": "00:00"
+			},
+			"ufi": -3096949,
+			"propertyClass": 4,
+			"reviewCount": 8140,
+			"reviewScoreWord": "Very Good",
+			"reviewScore": 8.5,
+			"checkinDate": "2025-01-05",
+			"qualityClass": 0,
+			"currency": "SAR"
+		}
+	}
+]
