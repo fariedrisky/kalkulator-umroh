@@ -41,6 +41,18 @@ const transports = [
 	label: `${transport.name} - Rp ${transport.price.toLocaleString("id-ID")}`,
 }));
 
+interface Hotel {
+	hotel_id: number;
+	property: {
+		name: string;
+		priceBreakdown: {
+			grossPrice: {
+				value: number;
+			};
+		};
+	};
+}
+
 const KalkulatorUmroh = () => {
 	const [showPriceModal, setShowPriceModal] = useState(false);
 	const [showAdditionalCosts, setShowAdditionalCosts] =
@@ -77,10 +89,12 @@ const KalkulatorUmroh = () => {
 		muthoif: 0,
 		handling: 0,
 	});
+	console.log("KalkulatorUmroh ~ costEstimation:", costEstimation);
 
-	const [hotels, setHotels] = useState<any[]>([]);
+	const [hotels, setHotels] = useState<Hotel[]>([]);
 	const [isLoadingHotels, setIsLoadingHotels] = useState(false);
 	const [hotelError, setHotelError] = useState<string | null>(null);
+	console.log("KalkulatorUmroh ~ hotelError:", hotelError);
 
 	useEffect(() => {
 		const fetchHotels = async () => {
