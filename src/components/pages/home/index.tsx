@@ -192,21 +192,21 @@ const KalkulatorUmroh = () => {
 				}}
 			/>
 
-			<div className="relative z-10 max-w-4xl mx-auto p-6 space-y-8">
+			<div className="relative z-10 w-full max-w-4xl mx-auto p-4 md:p-6 space-y-6 md:space-y-8">
 				<Card className="w-full">
 					<CardHeader>
-						<CardTitle className="text-center text-3xl font-serif ">
+						<CardTitle className="text-center text-2xl md:text-3xl font-serif">
 							Kalkulator Umroh
 						</CardTitle>
-						<CardDescription className="text-center">
+						<CardDescription className="text-center text-sm md:text-base">
 							Hitung biaya perjalanan umroh Anda dengan mudah
 						</CardDescription>
 					</CardHeader>
 					<CardContent>
-						<div className="space-y-6">
+						<div className="space-y-4 md:space-y-6">
 							{/* Flight Details Section */}
-							<div className="space-y-6">
-								<div className="grid grid-cols-2 gap-6">
+							<div className="space-y-4 md:space-y-6">
+								<div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
 									<div className="space-y-2">
 										<Label>Tanggal Keberangkatan</Label>
 										<DatePicker
@@ -238,7 +238,7 @@ const KalkulatorUmroh = () => {
 								</div>
 							</div>
 
-							<div className="grid grid-cols-2 gap-6">
+							<div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
 								<div className="space-y-2">
 									<Label>Bandara Keberangkatan</Label>
 									<Select
@@ -257,7 +257,6 @@ const KalkulatorUmroh = () => {
 										placeholder="Pilih Bandara Asal"
 									/>
 								</div>
-
 								<div className="space-y-2">
 									<Label>Bandara Tujuan</Label>
 									<Select
@@ -278,6 +277,7 @@ const KalkulatorUmroh = () => {
 								</div>
 							</div>
 
+							{/* Additional sections with responsive adjustments */}
 							<div className="flex items-center space-x-2">
 								<Checkbox
 									id="excludeFlight"
@@ -291,43 +291,46 @@ const KalkulatorUmroh = () => {
 										)
 									}
 								/>
-								<Label htmlFor="excludeFlight">
-									Tidak termasuk tiket pesawat
-								</Label>
 							</div>
 
-							{/* Visa Section */}
-							<div className="space-y-2">
-								<Label>
-									Apakah sudah mempunyai VISA + Siskopatuh?
-								</Label>
-								<RadioGroup
-									id="visa-status"
-									name="visa"
-									value={formData.hasVisa}
-									onChange={(e) =>
-										handleInputChange(
-											"hasVisa",
-											e.target.value
-										)
-									}
-								>
-									<RadioGroupItem
-										value="sudah"
-										id="visa-yes"
-										label="Sudah"
-									/>
-									<RadioGroupItem
-										value="belum"
-										id="visa-no"
-										label="Belum"
-									/>
-								</RadioGroup>
-							</div>
-
-							{/* Hotel Madinah Section */}
+							{/* Radio groups with responsive spacing */}
 							<div className="space-y-4">
-								<Label>Sudah Booking Hotel di Madinah?</Label>
+								<div className="space-y-2">
+									<Label className="text-sm md:text-base">
+										Apakah sudah mempunyai VISA +
+										Siskopatuh?
+									</Label>
+									<RadioGroup
+										id="visa-status"
+										name="visa"
+										value={formData.hasVisa}
+										onChange={(e) =>
+											handleInputChange(
+												"hasVisa",
+												e.target.value
+											)
+										}
+										className="space-y-2 md:space-y-3"
+									>
+										<RadioGroupItem
+											value="sudah"
+											id="visa-yes"
+											label="Sudah"
+										/>
+										<RadioGroupItem
+											value="belum"
+											id="visa-no"
+											label="Belum"
+										/>
+									</RadioGroup>
+								</div>
+							</div>
+
+							{/* Hotel sections with responsive adjustments */}
+							<div className="space-y-4">
+								<Label className="text-sm md:text-base">
+									Sudah Booking Hotel di Madinah?
+								</Label>
 								<RadioGroup
 									id="hotel-madinah-status"
 									name="hotel-madinah"
@@ -338,6 +341,7 @@ const KalkulatorUmroh = () => {
 											e.target.value
 										)
 									}
+									className="space-y-2 md:space-y-3"
 								>
 									<RadioGroupItem
 										value="sudah"
@@ -564,7 +568,7 @@ const KalkulatorUmroh = () => {
 
 							{/* Price Check Button */}
 							<Button
-								className="w-full"
+								className="w-full text-sm md:text-base py-2 md:py-3"
 								onClick={() => setShowPriceModal(true)}
 							>
 								Cek Harga Paket
@@ -575,11 +579,11 @@ const KalkulatorUmroh = () => {
 
 				{/* Price Modal */}
 				<Modal isOpen={showPriceModal} onClose={handleCloseModal}>
-					<div className="space-y-4">
-						<h2 className="text-lg font-semibold">
+					<div className="space-y-4 p-4 md:p-6">
+						<h2 className="text-lg md:text-xl font-semibold">
 							Perkiraan Biaya
 						</h2>
-						<p>
+						<p className="text-sm md:text-base">
 							Perkiraan biaya wajib yang harus Anda siapkan untuk
 							keberangkatan tanggal{" "}
 							{formData.departureDate?.toLocaleDateString()}{" "}
@@ -587,9 +591,10 @@ const KalkulatorUmroh = () => {
 							{formData.returnDate?.toLocaleDateString()} adalah
 							sebesar Rp. 25.000.000
 						</p>
-						<div className="flex justify-between">
+						<div className="flex flex-col md:flex-row justify-between space-y-2 md:space-y-0 md:space-x-4">
 							<Button
 								variant="outline"
+								className="w-full md:w-auto"
 								onClick={() => {
 									setShowPriceModal(false);
 									setShowAdditionalCosts(true);
@@ -597,7 +602,10 @@ const KalkulatorUmroh = () => {
 							>
 								Lihat biaya-biaya lainnya
 							</Button>
-							<Button onClick={handleCloseModal}>
+							<Button
+								className="w-full md:w-auto"
+								onClick={handleCloseModal}
+							>
 								Ok saya paham
 							</Button>
 						</div>
