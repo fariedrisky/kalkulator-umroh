@@ -1,7 +1,13 @@
 import React from "react";
 import Label from "@/components/ui/Label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/RadioGroup";
-import Card from "@/components/ui/Card";
+import {
+	Card,
+	CardContent,
+	CardDescription,
+	CardHeader,
+	CardTitle,
+} from "@/components/ui/Card";
 
 interface AdditionalCostsProps {
 	formData: {
@@ -27,41 +33,49 @@ export default function AdditionalCosts({
 		};
 
 	return (
-		<Card
-			title="Biaya Tambahan Keberangkatan Umroh"
-			description=""
-			className="w-full"
-		>
-			<div className="space-y-6">
-				<div className="space-y-4">
-					{additionalItems.map((item) => (
-						<div key={item.id} className="space-y-2">
-							<Label htmlFor={`${item.id}-group`}>
-								Apakah Anda sudah mempunyai {item.label}?
-							</Label>
-							<RadioGroup
-								id={`${item.id}-group`}
-								name={item.id}
-								value={formData.additionalItems[item.id]}
-								onChange={handleRadioChange(item.id)}
-								className="space-y-2"
-							>
-								<RadioGroupItem value="ya" label="Ya" />
-								<RadioGroupItem value="tidak" label="Tidak" />
-							</RadioGroup>
-						</div>
-					))}
-				</div>
+		<Card>
+			<CardHeader>
+				<CardTitle>Biaya Tambahan Keberangkatan Umroh</CardTitle>
+				<CardDescription>
+					Silahkan pilih item tambahan yang Anda perlukan
+				</CardDescription>
+			</CardHeader>
+			<CardContent>
+				<div className="space-y-6">
+					<div className="space-y-4">
+						{additionalItems.map((item) => (
+							<div key={item.id} className="space-y-2">
+								<Label htmlFor={`${item.id}-group`}>
+									Apakah Anda sudah mempunyai {item.label}?
+								</Label>
+								<RadioGroup
+									id={`${item.id}-group`}
+									name={item.id}
+									value={formData.additionalItems[item.id]}
+									onChange={handleRadioChange(item.id)}
+									className="space-y-2"
+								>
+									<RadioGroupItem value="ya" label="Ya" />
+									<RadioGroupItem
+										value="tidak"
+										label="Tidak"
+									/>
+								</RadioGroup>
+							</div>
+						))}
+					</div>
 
-				<div className="p-4 bg-gray-100 rounded-lg">
-					<p className="text-gray-700">
-						Total biaya tambahan yang anda perlukan: Rp. 2.500.000
-					</p>
-					<p className="mt-2 text-gray-700">
-						Total biaya keseluruhan: Rp. 27.500.000
-					</p>
+					<div className="p-4 bg-gray-100 rounded-lg">
+						<p className="text-gray-700">
+							Total biaya tambahan yang anda perlukan: Rp.
+							2.500.000
+						</p>
+						<p className="mt-2 text-gray-700">
+							Total biaya keseluruhan: Rp. 27.500.000
+						</p>
+					</div>
 				</div>
-			</div>
+			</CardContent>
 		</Card>
 	);
 }
