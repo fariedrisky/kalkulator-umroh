@@ -63,11 +63,11 @@ export default function Select({
 		>
 			<button
 				onClick={() => !disabled && setIsOpen(!isOpen)}
-				className={`flex hover:bg-gray-50 duration-150 h-9 w-full items-center justify-between rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm transition-colors ${
+				className={`flex hover:bg-gray-50 h-9 w-full items-center justify-between rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm  ${
 					disabled
 						? "cursor-not-allowed opacity-50"
 						: "hover:border-gray-300"
-				} focus:outline-none focus:ring-1 focus:ring-blue-500`}
+				} focus:outline-none  transition-all duration-200  focus:ring-1 focus:ring-blue-500`}
 				disabled={disabled}
 			>
 				<span className="text-left">

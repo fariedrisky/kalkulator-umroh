@@ -2,7 +2,13 @@
 
 import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/Button";
-import Card from "@/components/ui/Card";
+import {
+	Card,
+	CardContent,
+	CardDescription,
+	CardHeader,
+	CardTitle,
+} from "@/components/ui/Card";
 import Checkbox from "@/components/ui/Checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/RadioGroup";
 import Label from "@/components/ui/Label";
@@ -13,6 +19,7 @@ import { CostEstimationType, FormDataType } from "./types";
 import { format } from "date-fns";
 import { hotelService } from "@/services/hotelService";
 import AnimatedWrapper from "@/components/ui/AnimatedWrapper";
+import DatePicker from "@/components/ui/DatePicker";
 
 // Dummy data
 const airports = [
@@ -146,361 +153,451 @@ const KalkulatorUmroh = () => {
 	};
 
 	return (
-		<div className="max-w-4xl mx-auto p-6 space-y-8">
-			<Card title="Kalkulator Umroh" description="" className="w-full">
-				<div className="space-y-6">
-					{/* Flight Details Section */}
-					<div className="space-y-6">
-						<div className="grid grid-cols-2 gap-6"></div>
-					</div>
+		<div className="relative min-h-screen">
+			<div
+				className="fixed inset-0 z-0 bg-gray-100"
+				style={{
+					backgroundColor: "#ffff",
+					backgroundImage: `
+					  linear-gradient(67.5deg, #ffff 10%, transparent 10%),
+					  linear-gradient(157.5deg, #ffff 10%, transparent 10%),
+					  linear-gradient(67.5deg, transparent 90%, #ffff 90%),
+					  linear-gradient(157.5deg, transparent 90%, #ffff 90%),
+					  linear-gradient(22.5deg, #ffff 10%, transparent 10%),
+					  linear-gradient(112.5deg, #ffff 10%, transparent 10%),
+					  linear-gradient(22.5deg, transparent 90%, #ffff 90%),
+					  linear-gradient(112.5deg, transparent 90%, #ffff 90%),
+					  linear-gradient(22.5deg, transparent 33%, #f2f2f2 33%, #f2f2f2 36%, transparent 36%, transparent 64%, #f2f2f2 64%, #f2f2f2 67%, transparent 67%),
+					  linear-gradient(-22.5deg, transparent 33%, #f2f2f2 33%, #f2f2f2 36%, transparent 36%, transparent 64%, #f2f2f2 64%, #f2f2f2 67%, transparent 67%),
+					  linear-gradient(112.5deg, transparent 33%, #f2f2f2 33%, #f2f2f2 36%, transparent 36%, transparent 64%, #f2f2f2 64%, #f2f2f2 67%, transparent 67%),
+					  linear-gradient(-112.5deg, transparent 33%, #f2f2f2 33%, #f2f2f2 36%, transparent 36%, transparent 64%, #f2f2f2 64%, #f2f2f2 67%, transparent 67%)
+					`,
+					backgroundSize: "250px 250px",
+					backgroundPosition:
+						"-100px 150px, -150px 150px, -150px 100px, -100px 100px, -150px 100px, -100px 100px, -100px 150px, -150px 150px, 0 0, 0 0, 0 0, 0 0",
+				}}
+			/>
 
-					<div className="grid grid-cols-2 gap-6">
-						<div className="space-y-2">
-							<Label>Bandara Keberangkatan</Label>
-							<Select
-								options={airports.filter(
-									(airport) =>
-										airport.value !==
-										formData.destinationAirport
-								)}
-								value={formData.originAirport}
-								onChange={(value) =>
-									handleInputChange("originAirport", value)
-								}
-								placeholder="Pilih Bandara Asal"
-							/>
-						</div>
+			<div className="relative z-10 max-w-4xl mx-auto p-6 space-y-8">
+				<Card className="w-full">
+					<CardHeader>
+						<CardTitle className="text-center text-3xl font-serif ">
+							Kalkulator Umroh
+						</CardTitle>
+						<CardDescription className="text-center">
+							Hitung biaya perjalanan umroh Anda dengan mudah
+						</CardDescription>
+					</CardHeader>
+					<CardContent>
+						<div className="space-y-6">
+							{/* Flight Details Section */}
+							<div className="space-y-6">
+								<div className="grid grid-cols-2 gap-6">
+									<div className="space-y-2">
+										<Label>Tanggal Keberangkatan</Label>
+										<DatePicker
+											value={formData.departureDate}
+											minDate={new Date()}
+											onChange={(date) =>
+												handleInputChange(
+													"departureDate",
+													date
+												)
+											}
+											className="w-full"
+										/>
+									</div>
+									<div className="space-y-2">
+										<Label>Tanggal Kembali</Label>
+										<DatePicker
+											value={formData.returnDate}
+											minDate={new Date()}
+											onChange={(date) =>
+												handleInputChange(
+													"returnDate",
+													date
+												)
+											}
+											className="w-full"
+										/>
+									</div>
+								</div>
+							</div>
 
-						<div className="space-y-2">
-							<Label>Bandara Tujuan</Label>
-							<Select
-								options={airports.filter(
-									(airport) =>
-										airport.value !== formData.originAirport
-								)}
-								value={formData.destinationAirport}
-								onChange={(value) =>
-									handleInputChange(
-										"destinationAirport",
-										value
-									)
-								}
-								placeholder="Pilih Bandara Tujuan"
-							/>
-						</div>
-					</div>
-
-					<div className="flex items-center space-x-2">
-						<Checkbox
-							id="excludeFlight"
-							name="excludeFlight"
-							label="Tidak termasuk tiket pesawat"
-							checked={formData.excludeFlight}
-							onChange={(e) =>
-								handleInputChange(
-									"excludeFlight",
-									e.target.checked
-								)
-							}
-						/>
-						<Label htmlFor="excludeFlight">
-							Tidak termasuk tiket pesawat
-						</Label>
-					</div>
-
-					{/* Visa Section */}
-					<div className="space-y-2">
-						<Label>Apakah sudah mempunyai VISA + Siskopatuh?</Label>
-						<RadioGroup
-							id="visa-status"
-							name="visa"
-							value={formData.hasVisa}
-							onChange={(e) =>
-								handleInputChange("hasVisa", e.target.value)
-							}
-						>
-							<RadioGroupItem
-								value="sudah"
-								id="visa-yes"
-								label="Sudah"
-							/>
-							<RadioGroupItem
-								value="belum"
-								id="visa-no"
-								label="Belum"
-							/>
-						</RadioGroup>
-					</div>
-
-					{/* Hotel Madinah Section */}
-					<div className="space-y-4">
-						<Label>Sudah Booking Hotel di Madinah?</Label>
-						<RadioGroup
-							id="hotel-madinah-status"
-							name="hotel-madinah"
-							value={formData.hotelMadinahStatus}
-							onChange={(e) =>
-								handleInputChange(
-									"hotelMadinahStatus",
-									e.target.value
-								)
-							}
-						>
-							<RadioGroupItem
-								value="sudah"
-								id="hotel-madinah-yes"
-								label="Sudah"
-							/>
-							<RadioGroupItem
-								value="belum"
-								id="hotel-madinah-no"
-								label="Belum"
-							/>
-						</RadioGroup>
-
-						{formData.hotelMadinahStatus === "belum" && (
-							<AnimatedWrapper>
-								<div className="mt-4">
+							<div className="grid grid-cols-2 gap-6">
+								<div className="space-y-2">
+									<Label>Bandara Keberangkatan</Label>
 									<Select
-										options={formattedHotels}
-										value={formData.selectedMadinahHotel}
+										options={airports.filter(
+											(airport) =>
+												airport.value !==
+												formData.destinationAirport
+										)}
+										value={formData.originAirport}
 										onChange={(value) =>
 											handleInputChange(
-												"selectedMadinahHotel",
+												"originAirport",
 												value
 											)
 										}
-										placeholder="Pilih Hotel di Madinah"
-										disabled={isLoadingHotels}
+										placeholder="Pilih Bandara Asal"
 									/>
 								</div>
-							</AnimatedWrapper>
-						)}
-					</div>
 
-					{/* Hotel Mekah Section */}
-					<div className="space-y-4">
-						<Label>Sudah Booking Hotel di Mekah?</Label>
-						<RadioGroup
-							id="hotel-mekah-status"
-							name="hotel-mekah"
-							value={formData.hotelMakkahStatus}
-							onChange={(e) =>
-								handleInputChange(
-									"hotelMakkahStatus",
-									e.target.value
-								)
-							}
-						>
-							<RadioGroupItem
-								value="sudah"
-								id="hotel-mekah-yes"
-								label="Sudah"
-							/>
-							<RadioGroupItem
-								value="belum"
-								id="hotel-mekah-no"
-								label="Belum"
-							/>
-						</RadioGroup>
-
-						{formData.hotelMakkahStatus === "belum" && (
-							<AnimatedWrapper>
-								<div className="mt-4">
+								<div className="space-y-2">
+									<Label>Bandara Tujuan</Label>
 									<Select
-										options={formattedHotels}
-										value={formData.selectedMekahHotel}
-										onChange={(value) => {
+										options={airports.filter(
+											(airport) =>
+												airport.value !==
+												formData.originAirport
+										)}
+										value={formData.destinationAirport}
+										onChange={(value) =>
 											handleInputChange(
-												"selectedMekahHotel",
+												"destinationAirport",
 												value
-											);
-											const selectedHotel = hotels.find(
-												(hotel) =>
-													hotel.hotel_id.toString() ===
-													value
-											);
-											if (selectedHotel) {
-												setCostEstimation((prev) => ({
-													...prev,
-													makkahHotel:
-														selectedHotel.property
-															.priceBreakdown
-															.grossPrice.value,
-												}));
-											}
-										}}
-										placeholder={
-											isLoadingHotels
-												? "Loading hotels..."
-												: !formData.departureDate ||
-												  !formData.returnDate
-												? "Please select dates first"
-												: "Pilih Hotel di Mekah"
+											)
 										}
-										disabled={
-											isLoadingHotels ||
-											!formData.departureDate ||
-											!formData.returnDate
-										}
+										placeholder="Pilih Bandara Tujuan"
 									/>
 								</div>
-							</AnimatedWrapper>
-						)}
-					</div>
+							</div>
 
-					{/* Airport Transport Section */}
-					<div className="space-y-4">
-						<Label>Sudah Booking Mobil Jemputan di Bandara?</Label>
-						<RadioGroup
-							id="transport-status"
-							name="transport"
-							value={formData.airportTransportStatus}
-							onChange={(e) =>
-								handleInputChange(
-									"airportTransportStatus",
-									e.target.value
-								)
-							}
-						>
-							<RadioGroupItem
-								value="sudah"
-								id="transport-yes"
-								label="Sudah"
-							/>
-							<RadioGroupItem
-								value="tidak-perlu"
-								id="transport-not-needed"
-								label="Tidak Perlu"
-							/>
-							<RadioGroupItem
-								value="belum"
-								id="transport-no"
-								label="Belum"
-							/>
-						</RadioGroup>
-
-						{formData.airportTransportStatus === "belum" && (
-							<AnimatedWrapper>
-								<Select
-									options={transports}
-									value={formData.selectedTransport}
-									onChange={(value) =>
+							<div className="flex items-center space-x-2">
+								<Checkbox
+									id="excludeFlight"
+									name="excludeFlight"
+									label="Tidak termasuk tiket pesawat"
+									checked={formData.excludeFlight}
+									onChange={(e) =>
 										handleInputChange(
-											"selectedTransport",
-											value
+											"excludeFlight",
+											e.target.checked
 										)
 									}
-									placeholder="Pilih Layanan Transport"
 								/>
-							</AnimatedWrapper>
-						)}
-					</div>
+								<Label htmlFor="excludeFlight">
+									Tidak termasuk tiket pesawat
+								</Label>
+							</div>
 
-					{/* Additional Services Section */}
+							{/* Visa Section */}
+							<div className="space-y-2">
+								<Label>
+									Apakah sudah mempunyai VISA + Siskopatuh?
+								</Label>
+								<RadioGroup
+									id="visa-status"
+									name="visa"
+									value={formData.hasVisa}
+									onChange={(e) =>
+										handleInputChange(
+											"hasVisa",
+											e.target.value
+										)
+									}
+								>
+									<RadioGroupItem
+										value="sudah"
+										id="visa-yes"
+										label="Sudah"
+									/>
+									<RadioGroupItem
+										value="belum"
+										id="visa-no"
+										label="Belum"
+									/>
+								</RadioGroup>
+							</div>
+
+							{/* Hotel Madinah Section */}
+							<div className="space-y-4">
+								<Label>Sudah Booking Hotel di Madinah?</Label>
+								<RadioGroup
+									id="hotel-madinah-status"
+									name="hotel-madinah"
+									value={formData.hotelMadinahStatus}
+									onChange={(e) =>
+										handleInputChange(
+											"hotelMadinahStatus",
+											e.target.value
+										)
+									}
+								>
+									<RadioGroupItem
+										value="sudah"
+										id="hotel-madinah-yes"
+										label="Sudah"
+									/>
+									<RadioGroupItem
+										value="belum"
+										id="hotel-madinah-no"
+										label="Belum"
+									/>
+								</RadioGroup>
+
+								{formData.hotelMadinahStatus === "belum" && (
+									<AnimatedWrapper>
+										<div className="mt-4">
+											<Select
+												options={formattedHotels}
+												value={
+													formData.selectedMadinahHotel
+												}
+												onChange={(value) =>
+													handleInputChange(
+														"selectedMadinahHotel",
+														value
+													)
+												}
+												placeholder="Pilih Hotel di Madinah"
+												disabled={isLoadingHotels}
+											/>
+										</div>
+									</AnimatedWrapper>
+								)}
+							</div>
+
+							{/* Hotel Mekah Section */}
+							<div className="space-y-4">
+								<Label>Sudah Booking Hotel di Mekah?</Label>
+								<RadioGroup
+									id="hotel-mekah-status"
+									name="hotel-mekah"
+									value={formData.hotelMakkahStatus}
+									onChange={(e) =>
+										handleInputChange(
+											"hotelMakkahStatus",
+											e.target.value
+										)
+									}
+								>
+									<RadioGroupItem
+										value="sudah"
+										id="hotel-mekah-yes"
+										label="Sudah"
+									/>
+									<RadioGroupItem
+										value="belum"
+										id="hotel-mekah-no"
+										label="Belum"
+									/>
+								</RadioGroup>
+
+								{formData.hotelMakkahStatus === "belum" && (
+									<AnimatedWrapper>
+										<div className="mt-4">
+											<Select
+												options={formattedHotels}
+												value={
+													formData.selectedMekahHotel
+												}
+												onChange={(value) => {
+													handleInputChange(
+														"selectedMekahHotel",
+														value
+													);
+													const selectedHotel =
+														hotels.find(
+															(hotel) =>
+																hotel.hotel_id.toString() ===
+																value
+														);
+													if (selectedHotel) {
+														setCostEstimation(
+															(prev) => ({
+																...prev,
+																makkahHotel:
+																	selectedHotel
+																		.property
+																		.priceBreakdown
+																		.grossPrice
+																		.value,
+															})
+														);
+													}
+												}}
+												placeholder={
+													isLoadingHotels
+														? "Loading hotels..."
+														: !formData.departureDate ||
+														  !formData.returnDate
+														? "Please select dates first"
+														: "Pilih Hotel di Mekah"
+												}
+												disabled={
+													isLoadingHotels ||
+													!formData.departureDate ||
+													!formData.returnDate
+												}
+											/>
+										</div>
+									</AnimatedWrapper>
+								)}
+							</div>
+
+							{/* Airport Transport Section */}
+							<div className="space-y-4">
+								<Label>
+									Sudah Booking Mobil Jemputan di Bandara?
+								</Label>
+								<RadioGroup
+									id="transport-status"
+									name="transport"
+									value={formData.airportTransportStatus}
+									onChange={(e) =>
+										handleInputChange(
+											"airportTransportStatus",
+											e.target.value
+										)
+									}
+								>
+									<RadioGroupItem
+										value="sudah"
+										id="transport-yes"
+										label="Sudah"
+									/>
+									<RadioGroupItem
+										value="tidak-perlu"
+										id="transport-not-needed"
+										label="Tidak Perlu"
+									/>
+									<RadioGroupItem
+										value="belum"
+										id="transport-no"
+										label="Belum"
+									/>
+								</RadioGroup>
+
+								{formData.airportTransportStatus ===
+									"belum" && (
+									<AnimatedWrapper>
+										<Select
+											options={transports}
+											value={formData.selectedTransport}
+											onChange={(value) =>
+												handleInputChange(
+													"selectedTransport",
+													value
+												)
+											}
+											placeholder="Pilih Layanan Transport"
+										/>
+									</AnimatedWrapper>
+								)}
+							</div>
+
+							{/* Additional Services Section */}
+							<div className="space-y-4">
+								<div className="space-y-2">
+									<Label>
+										Perlu jasa Muthoif (pendamping selama di
+										Arab)?
+									</Label>
+									<RadioGroup
+										id="muthoif-status"
+										name="muthoif"
+										value={formData.muthoifStatus}
+										onChange={(e) =>
+											handleInputChange(
+												"muthoifStatus",
+												e.target.value
+											)
+										}
+									>
+										<RadioGroupItem
+											value="ya"
+											id="muthoif-yes"
+											label="Ya"
+										/>
+										<RadioGroupItem
+											value="tidak"
+											id="muthoif-no"
+											label="Tidak"
+										/>
+									</RadioGroup>
+								</div>
+
+								<div className="space-y-2">
+									<Label>
+										Perlu jasa Handling Barang di Bandara?
+									</Label>
+									<RadioGroup
+										id="handling-status"
+										name="handling"
+										value={formData.handlingStatus}
+										onChange={(e) =>
+											handleInputChange(
+												"handlingStatus",
+												e.target.value
+											)
+										}
+									>
+										<RadioGroupItem
+											value="ya"
+											id="handling-yes"
+											label="Ya"
+										/>
+										<RadioGroupItem
+											value="tidak"
+											id="handling-no"
+											label="Tidak"
+										/>
+									</RadioGroup>
+								</div>
+							</div>
+
+							{/* Price Check Button */}
+							<Button
+								className="w-full"
+								onClick={() => setShowPriceModal(true)}
+							>
+								Cek Harga Paket
+							</Button>
+						</div>
+					</CardContent>
+				</Card>
+
+				{/* Price Modal */}
+				<Modal isOpen={showPriceModal} onClose={handleCloseModal}>
 					<div className="space-y-4">
-						<div className="space-y-2">
-							<Label>
-								Perlu jasa Muthoif (pendamping selama di Arab)?
-							</Label>
-							<RadioGroup
-								id="muthoif-status"
-								name="muthoif"
-								value={formData.muthoifStatus}
-								onChange={(e) =>
-									handleInputChange(
-										"muthoifStatus",
-										e.target.value
-									)
-								}
+						<h2 className="text-lg font-semibold">
+							Perkiraan Biaya
+						</h2>
+						<p>
+							Perkiraan biaya wajib yang harus Anda siapkan untuk
+							keberangkatan tanggal{" "}
+							{formData.departureDate?.toLocaleDateString()}{" "}
+							sampai dengan{" "}
+							{formData.returnDate?.toLocaleDateString()} adalah
+							sebesar Rp. 25.000.000
+						</p>
+						<div className="flex justify-between">
+							<Button
+								variant="outline"
+								onClick={() => {
+									setShowPriceModal(false);
+									setShowAdditionalCosts(true);
+								}}
 							>
-								<RadioGroupItem
-									value="ya"
-									id="muthoif-yes"
-									label="Ya"
-								/>
-								<RadioGroupItem
-									value="tidak"
-									id="muthoif-no"
-									label="Tidak"
-								/>
-							</RadioGroup>
-						</div>
-
-						<div className="space-y-2">
-							<Label>
-								Perlu jasa Handling Barang di Bandara?
-							</Label>
-							<RadioGroup
-								id="handling-status"
-								name="handling"
-								value={formData.handlingStatus}
-								onChange={(e) =>
-									handleInputChange(
-										"handlingStatus",
-										e.target.value
-									)
-								}
-							>
-								<RadioGroupItem
-									value="ya"
-									id="handling-yes"
-									label="Ya"
-								/>
-								<RadioGroupItem
-									value="tidak"
-									id="handling-no"
-									label="Tidak"
-								/>
-							</RadioGroup>
+								Lihat biaya-biaya lainnya
+							</Button>
+							<Button onClick={handleCloseModal}>
+								Ok saya paham
+							</Button>
 						</div>
 					</div>
+				</Modal>
 
-					{/* Price Check Button */}
-					<Button
-						className="w-full"
-						onClick={() => setShowPriceModal(true)}
-					>
-						Cek Harga Paket
-					</Button>
-				</div>
-			</Card>
-
-			{/* Price Modal */}
-			<Modal isOpen={showPriceModal} onClose={handleCloseModal}>
-				<div className="space-y-4">
-					<h2 className="text-lg font-semibold">Perkiraan Biaya</h2>
-					<p>
-						Perkiraan biaya wajib yang harus Anda siapkan untuk
-						keberangkatan tanggal{" "}
-						{formData.departureDate?.toLocaleDateString()} sampai
-						dengan {formData.returnDate?.toLocaleDateString()}{" "}
-						adalah sebesar Rp. 25.000.000
-					</p>
-					<div className="flex justify-between">
-						<Button
-							variant="outline"
-							onClick={() => {
-								setShowPriceModal(false);
-								setShowAdditionalCosts(true);
-							}}
-						>
-							Lihat biaya-biaya lainnya
-						</Button>
-						<Button onClick={handleCloseModal}>
-							Ok saya paham
-						</Button>
-					</div>
-				</div>
-			</Modal>
-
-			{/* Additional Costs Form */}
-			{showAdditionalCosts && (
-				<AdditionalCosts
-					formData={formData}
-					handleAdditionalItemChange={handleAdditionalItemChange}
-				/>
-			)}
+				{/* Additional Costs Form */}
+				{showAdditionalCosts && (
+					<AdditionalCosts
+						formData={formData}
+						handleAdditionalItemChange={handleAdditionalItemChange}
+					/>
+				)}
+			</div>
 		</div>
 	);
 };

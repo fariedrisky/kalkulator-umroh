@@ -1,71 +1,87 @@
-import Image from "next/image";
+import React from "react";
 
+// Card Container
 interface CardProps {
-	title: string;
-	description: string;
-	imageUrl?: string;
-	onClick?: () => void;
 	className?: string;
 	children?: React.ReactNode;
 }
 
-const Card: React.FC<CardProps> = ({
-	title,
-	description,
-	imageUrl,
-	onClick,
-	className = "",
-	children,
-}) => {
+const Card = ({ className = "", children }: CardProps) => {
 	return (
 		<div
 			className={`bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 ${className}`}
-			onClick={onClick}
 		>
-			{imageUrl && (
-				<div className="relative w-full h-48">
-					<Image
-						src={imageUrl}
-						alt={title}
-						className="w-full h-full object-cover"
-					/>
-				</div>
-			)}
-
-			<div className="p-6">
-				<h3 className="text-xl font-semibold text-gray-800 mb-2">
-					{title}
-				</h3>
-
-				<p className="text-gray-600 mb-4">{description}</p>
-
-				{children && <div className="mt-4">{children}</div>}
-			</div>
+			{children}
 		</div>
 	);
 };
 
-export default Card;
+// Card Header
+interface CardHeaderProps {
+	className?: string;
+	children?: React.ReactNode;
+}
 
-// Example usage:
-/*
-  import Card from './Card';
-  
-  const ExamplePage = () => {
-    return (
-      <div className="p-4">
-        <Card
-          title="Getting Started with Next.js"
-          description="Learn how to build scalable applications with Next.js, TypeScript, and Tailwind CSS."
-          imageUrl="/images/nextjs.jpg"
-          onClick={() => console.log('Card clicked')}
-          className="max-w-sm"
-        >
-          <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-            Read More
-          </button>
-        </Card>
-      </div>
-    );
-  };
-  */
+const CardHeader = ({ className = "", children }: CardHeaderProps) => {
+	return <div className={`p-6 pb-3 ${className}`}>{children}</div>;
+};
+
+// Card Title
+interface CardTitleProps {
+	className?: string;
+	children?: React.ReactNode;
+}
+
+const CardTitle = ({ className = "", children }: CardTitleProps) => {
+	return (
+		<h3 className={` text-xl font-semibold text-gray-800 ${className}`}>
+			{children}
+		</h3>
+	);
+};
+
+// Card Description
+interface CardDescriptionProps {
+	className?: string;
+	children?: React.ReactNode;
+}
+
+const CardDescription = ({
+	className = "",
+	children,
+}: CardDescriptionProps) => {
+	return <p className={`text-gray-600 mt-2 ${className}`}>{children}</p>;
+};
+
+// Card Content
+interface CardContentProps {
+	className?: string;
+	children?: React.ReactNode;
+}
+
+const CardContent = ({ className = "", children }: CardContentProps) => {
+	return <div className={`p-6 pt-0 ${className}`}>{children}</div>;
+};
+
+// Card Footer
+interface CardFooterProps {
+	className?: string;
+	children?: React.ReactNode;
+}
+
+const CardFooter = ({ className = "", children }: CardFooterProps) => {
+	return (
+		<div className={`p-6 pt-0 flex items-center gap-4 ${className}`}>
+			{children}
+		</div>
+	);
+};
+
+export {
+	Card,
+	CardHeader,
+	CardTitle,
+	CardDescription,
+	CardContent,
+	CardFooter,
+};

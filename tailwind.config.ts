@@ -10,6 +10,10 @@ export default {
 	],
 	theme: {
 		extend: {
+			fontFamily: {
+				serif: ["var(--font-gabriela)"],
+			},
+
 			colors: {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',

@@ -11,28 +11,58 @@ import {
 	isToday,
 	setYear,
 	setMonth,
+	isBefore,
+	isAfter,
+	startOfDay,
+	addDays,
+	subDays,
 } from "date-fns";
 import { ChevronLeft, ChevronRight, Calendar } from "lucide-react";
 import { id } from "date-fns/locale";
-
-interface DatePickerProps {
-	selected?: Date;
+interface DatePickerBaseProps {
+	label?: string;
+	error?: string;
+	value?: Date;
 	onChange: (date: Date) => void;
-	className?: string;
+	minDate?: Date;
+	maxDate?: Date;
+	disabledDates?: Date[];
+	placeholder?: string;
+	disabled?: boolean;
 }
+
+interface DatePickerProps
+	extends DatePickerBaseProps,
+		Omit<React.HTMLAttributes<HTMLDivElement>, "onChange"> {}
 
 type View = "days" | "months" | "years";
 
-const DatePicker = ({
-	selected,
+export default function DatePicker({
+	label,
+	error,
+	value,
 	onChange,
+	minDate,
+	maxDate,
+	disabledDates = [],
+	placeholder = "Pilih tanggal",
 	className = "",
-}: DatePickerProps) => {
+	disabled = false,
+	...props
+}: DatePickerProps) {
 	const [isOpen, setIsOpen] = useState(false);
-	const [currentMonth, setCurrentMonth] = useState(new Date());
+	const [currentMonth, setCurrentMonth] = useState(value || new Date());
 	const [view, setView] = useState<View>("days");
+	const [slideDirection, setSlideDirection] = useState("");
 	const datePickerRef = useRef<HTMLDivElement>(null);
 	const yearStart = Math.floor(currentMonth.getFullYear() / 10) * 10 - 1;
+
+	useEffect(() => {
+		if (!isOpen) {
+			// Reset slide direction when popup closes
+			setSlideDirection("");
+		}
+	}, [isOpen]);
 
 	useEffect(() => {
 		const handleClickOutside = (event: MouseEvent) => {
@@ -53,12 +83,14 @@ const DatePicker = ({
 	const nextMonth = (e: React.MouseEvent) => {
 		e.preventDefault();
 		e.stopPropagation();
+		setSlideDirection("slide-left");
 		setCurrentMonth(addMonths(currentMonth, 1));
 	};
 
 	const previousMonth = (e: React.MouseEvent) => {
 		e.preventDefault();
 		e.stopPropagation();
+		setSlideDirection("slide-right");
 		setCurrentMonth(subMonths(currentMonth, 1));
 	};
 
@@ -97,7 +129,35 @@ const DatePicker = ({
 	const getDaysInMonth = () => {
 		const start = startOfMonth(currentMonth);
 		const end = endOfMonth(currentMonth);
-		return eachDayOfInterval({ start, end });
+		const days = eachDayOfInterval({ start, end });
+
+		const firstDay = startOfMonth(currentMonth);
+		const prevDays = Array.from({ length: firstDay.getDay() }, (_, i) =>
+			subDays(firstDay, i + 1)
+		).reverse();
+
+		const lastDay = endOfMonth(currentMonth);
+		const nextDays = Array.from({ length: 6 - lastDay.getDay() }, (_, i) =>
+			addDays(lastDay, i + 1)
+		);
+
+		return [...prevDays, ...days, ...nextDays];
+	};
+
+	const isDateDisabled = (date: Date) => {
+		const startOfDayDate = startOfDay(date);
+
+		if (minDate && isBefore(startOfDayDate, startOfDay(minDate))) {
+			return true;
+		}
+
+		if (maxDate && isAfter(startOfDayDate, startOfDay(maxDate))) {
+			return true;
+		}
+
+		return disabledDates.some((disabledDate) =>
+			isSameDay(startOfDayDate, disabledDate)
+		);
 	};
 
 	const months = [
@@ -116,15 +176,11 @@ const DatePicker = ({
 	];
 
 	const handleMonthSelect = (e: React.MouseEvent, monthIndex: number) => {
-		e.preventDefault();
-		e.stopPropagation();
 		setCurrentMonth(setMonth(currentMonth, monthIndex));
 		setView("days");
 	};
 
 	const handleYearSelect = (e: React.MouseEvent, year: number) => {
-		e.preventDefault();
-		e.stopPropagation();
 		setCurrentMonth(setYear(currentMonth, year));
 		setView("months");
 	};
@@ -132,21 +188,156 @@ const DatePicker = ({
 	const handleViewChange = (e: React.MouseEvent) => {
 		e.preventDefault();
 		e.stopPropagation();
-		setView(
-			view === "days" ? "months" : view === "months" ? "years" : "years"
-		);
+		setView((currentView) => {
+			if (currentView === "days") return "months";
+			if (currentView === "months") return "years";
+			return "years";
+		});
 	};
 
 	const handleDaySelect = (day: Date) => {
-		onChange(day);
-		setIsOpen(false);
-		setView("days");
+		if (!isDateDisabled(day) && !disabled) {
+			onChange(day);
+			setIsOpen(false);
+			setView("days");
+		}
 	};
 
+	const renderDays = () => (
+		<>
+			<div className="mb-2 grid grid-cols-7 gap-1">
+				{["Min", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"].map(
+					(day) => (
+						<div
+							key={day}
+							className="text-center text-sm font-medium text-gray-500"
+						>
+							{day}
+						</div>
+					)
+				)}
+			</div>
+
+			<div className="grid grid-cols-7 gap-1">
+				{getDaysInMonth().map((day, index) => {
+					const isSelected = value ? isSameDay(day, value) : false;
+					const isCurrentMonth = isSameMonth(day, currentMonth);
+					const isCurrentDay = isToday(day);
+					const isDisabled = isDateDisabled(day);
+
+					return (
+						<button
+							type="button"
+							key={index}
+							onClick={() => handleDaySelect(day)}
+							disabled={isDisabled || disabled}
+							className={`
+                flex h-8 w-8 items-center justify-center rounded-lg text-sm
+                transition-all duration-200 ease-in-out
+                ${!isCurrentMonth ? "text-gray-300" : ""}
+                ${
+					isSelected && !isDisabled
+						? "bg-blue-500 text-white hover:bg-blue-600"
+						: ""
+				}
+                ${
+					!isSelected && isCurrentMonth && !isDisabled
+						? "hover:bg-gray-100"
+						: ""
+				}
+                ${
+					isCurrentDay && !isSelected && !isDisabled
+						? "border border-blue-500 text-blue-500"
+						: ""
+				}
+                ${
+					isDisabled || disabled
+						? "cursor-not-allowed text-gray-300 hover:bg-white"
+						: "hover:scale-110"
+				}
+              `}
+						>
+							{format(day, "d")}
+						</button>
+					);
+				})}
+			</div>
+		</>
+	);
+
+	const renderMonths = () => (
+		<div className="grid grid-cols-4 gap-2">
+			{months.map((month, index) => {
+				const isSelected = currentMonth.getMonth() === index;
+				const isCurrent =
+					new Date().getMonth() === index &&
+					new Date().getFullYear() === currentMonth.getFullYear();
+
+				return (
+					<button
+						type="button"
+						key={month}
+						onClick={(e) => handleMonthSelect(e, index)}
+						disabled={disabled}
+						className={`
+              p-2 text-sm rounded-lg transition-all duration-200
+              ${
+					isSelected
+						? "bg-blue-500 text-white hover:bg-blue-600"
+						: isCurrent
+						? "border border-blue-500 text-blue-500 hover:bg-gray-100"
+						: "hover:bg-gray-100"
+				}
+              ${!disabled && "hover:scale-105"}
+            `}
+					>
+						{month}
+					</button>
+				);
+			})}
+		</div>
+	);
+
+	const renderYears = () => (
+		<div className="grid grid-cols-3 gap-2">
+			{Array.from({ length: 12 }, (_, i) => yearStart + i).map((year) => {
+				const isSelected = currentMonth.getFullYear() === year;
+				const isCurrent = new Date().getFullYear() === year;
+
+				return (
+					<button
+						type="button"
+						key={year}
+						onClick={(e) => handleYearSelect(e, year)}
+						disabled={disabled}
+						className={`
+              p-2 text-sm rounded-lg transition-all duration-200
+              ${
+					isSelected
+						? "bg-blue-500 text-white hover:bg-blue-600"
+						: isCurrent
+						? "border border-blue-500 text-blue-500 hover:bg-gray-100"
+						: "hover:bg-gray-100"
+				}
+              ${
+					year === yearStart || year === yearStart + 11
+						? "text-gray-400"
+						: ""
+				}
+              ${!disabled && "hover:scale-105"}
+            `}
+					>
+						{year}
+					</button>
+				);
+			})}
+		</div>
+	);
+
 	const renderHeader = () => {
-		let title: string;
-		let onPrevious: (e: React.MouseEvent) => void;
-		let onNext: (e: React.MouseEvent) => void;
+		let title;
+		let onPrevious;
+		let onNext;
 
 		switch (view) {
 			case "months":
@@ -170,21 +361,24 @@ const DatePicker = ({
 				<button
 					type="button"
 					onClick={onPrevious}
-					className="rounded-full p-1 hover:bg-gray-100"
+					className="rounded-full p-1 transition-all duration-200 hover:bg-gray-100 hover:scale-110 active:scale-95"
+					disabled={disabled}
 				>
 					<ChevronLeft className="h-5 w-5" />
 				</button>
 				<button
 					type="button"
 					onClick={handleViewChange}
-					className="px-2 py-1 font-semibold hover:bg-gray-100"
+					className="px-2 py-1 rounded-lg font-semibold transition-all duration-200 hover:bg-gray-100 hover:scale-105"
+					disabled={disabled}
 				>
 					{title}
 				</button>
 				<button
 					type="button"
 					onClick={onNext}
-					className="rounded-full p-1 hover:bg-gray-100"
+					className="rounded-full p-1 transition-all duration-200 hover:bg-gray-100 hover:scale-110 active:scale-95"
+					disabled={disabled}
 				>
 					<ChevronRight className="h-5 w-5" />
 				</button>
@@ -192,149 +386,106 @@ const DatePicker = ({
 		);
 	};
 
-	const renderMonths = () => (
-		<div className="grid grid-cols-4 gap-2">
-			{months.map((month, index) => {
-				const isCurrentMonth = currentMonth.getMonth() === index;
-				return (
-					<button
-						type="button"
-						key={month}
-						onClick={(e) => handleMonthSelect(e, index)}
-						className={`p-2 text-sm ${
-							isCurrentMonth
-								? "bg-blue-500 text-white"
-								: "hover:bg-gray-100"
-						}`}
-					>
-						{month}
-					</button>
-				);
-			})}
-		</div>
-	);
-
-	const renderYears = () => (
-		<div className="grid grid-cols-3 gap-2">
-			{Array.from({ length: 12 }, (_, i) => yearStart + i).map((year) => {
-				const isCurrentYear = currentMonth.getFullYear() === year;
-				return (
-					<button
-						type="button"
-						key={year}
-						onClick={(e) => handleYearSelect(e, year)}
-						className={`p-2 text-sm ${
-							isCurrentYear
-								? "bg-blue-500 text-white"
-								: "hover:bg-gray-100"
-						} ${
-							year === yearStart || year === yearStart + 11
-								? "text-gray-400"
-								: ""
-						}`}
-					>
-						{year}
-					</button>
-				);
-			})}
-		</div>
-	);
-
-	const renderDays = () => (
+	return (
 		<>
-			<div className="mb-2 grid grid-cols-7 gap-1">
-				{["Min", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"].map(
-					(day) => (
-						<div
-							key={day}
-							className="text-center text-sm font-medium text-gray-500"
-						>
-							{day}
-						</div>
-					)
+			<style>
+				{`
+          @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95) translateY(-10px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+          }
+          
+          @keyframes slideLeft {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+          }
+          
+          @keyframes slideRight {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+          }
+
+          .calendar-popup {
+            animation: fadeIn 0.2s ease-out;
+          }
+
+          .slide-left {
+            animation: slideLeft 0.2s ease-out;
+          }
+
+          .slide-right {
+            animation: slideRight 0.2s ease-out;
+          }
+        `}
+			</style>
+
+			<div
+				className={`relative  ${className} ${
+					error ? "border-red-500" : ""
+				} ${disabled ? "opacity-50 cursor-not-allowed" : ""}`}
+				ref={datePickerRef}
+				{...props}
+			>
+				{label && (
+					<label className="block text-sm font-medium text-gray-700 mb-1">
+						{label}
+					</label>
 				)}
-			</div>
 
-			<div className="grid grid-cols-7 gap-1">
-				{Array.from({
-					length: new Date(
-						currentMonth.getFullYear(),
-						currentMonth.getMonth(),
-						1
-					).getDay(),
-				}).map((_, index) => (
-					<div key={`empty-${index}`} className="h-8" />
-				))}
+				<div
+					onClick={() => !disabled && setIsOpen(!isOpen)}
+					className={`
+            group flex w-full rounded-xl cursor-pointer items-center 
+            border border-gray-300 bg-white p-2 px-3 py-2 text-sm
+            transition-all duration-200 
+            hover:bg-gray-50 
+            focus-within:ring-1 focus-within:ring-blue-500
+            ${error ? "border-red-500" : ""}
+            ${disabled ? "cursor-not-allowed pointer-events-none" : ""}
+          `}
+				>
+					<Calendar
+						className={`
+              mr-2 h-5 w-5 text-gray-500 
+              transition-colors duration-200 
+       
+            `}
+					/>
+					<input
+						type="text"
+						readOnly
+						className={`
+              w-full cursor-pointer text-sm 
+              bg-transparent outline-none
+              ${disabled ? "cursor-not-allowed" : ""}
+            `}
+						placeholder={placeholder}
+						value={
+							value
+								? format(value, "dd MMMM yyyy", { locale: id })
+								: ""
+						}
+						disabled={disabled}
+					/>
+				</div>
 
-				{getDaysInMonth().map((day) => {
-					const isSelected = selected
-						? isSameDay(day, selected)
-						: false;
-					const isCurrentMonth = isSameMonth(day, currentMonth);
-					const isCurrentDay = isToday(day);
+				{error && <p className="mt-1 text-sm text-red-500">{error}</p>}
 
-					return (
-						<button
-							type="button"
-							key={day.toString()}
-							onClick={(e) => {
-								e.preventDefault();
-								e.stopPropagation();
-								handleDaySelect(day);
-							}}
-							className={`flex h-8 w-8 items-center justify-center text-sm ${
-								!isCurrentMonth && "text-gray-300"
-							} ${
-								isSelected &&
-								"bg-blue-500 text-white hover:bg-blue-600"
-							} ${
-								!isSelected &&
-								isCurrentMonth &&
-								"hover:bg-gray-100"
-							} ${
-								isCurrentDay &&
-								!isSelected &&
-								"border border-blue-500 text-blue-500"
-							}`}
-						>
-							{format(day, "d")}
-						</button>
-					);
-				})}
+				{isOpen && !disabled && (
+					<div
+						className={`${
+							isOpen ? "calendar-popup" : ""
+						}  absolute z-50 mt-2 w-72 border bg-white p-4 shadow-lg rounded-xl`}
+					>
+						{renderHeader()}
+						<div key={slideDirection} className={slideDirection}>
+							{view === "days" && renderDays()}
+							{view === "months" && renderMonths()}
+							{view === "years" && renderYears()}
+						</div>
+					</div>
+				)}
 			</div>
 		</>
 	);
-
-	return (
-		<div className={`relative ${className}`} ref={datePickerRef}>
-			<div
-				className="flex w-full cursor-pointer items-center border border-gray-300 bg-white p-2 px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-400"
-				onClick={() => setIsOpen(!isOpen)}
-			>
-				<Calendar className="mr-2 h-5 w-5 text-gray-500 transition-all duration-300 hover:text-blue-500" />
-				<input
-					type="text"
-					readOnly
-					className="w-full cursor-pointer text-sm outline-none"
-					placeholder="Pilih tanggal"
-					value={
-						selected
-							? format(selected, "dd MMMM yyyy", { locale: id })
-							: ""
-					}
-				/>
-			</div>
-
-			{isOpen && (
-				<div className="absolute z-50 mt-2 w-72 border bg-white p-4 shadow-lg">
-					{renderHeader()}
-					{view === "days" && renderDays()}
-					{view === "months" && renderMonths()}
-					{view === "years" && renderYears()}
-				</div>
-			)}
-		</div>
-	);
-};
-
-export default DatePicker;
+}

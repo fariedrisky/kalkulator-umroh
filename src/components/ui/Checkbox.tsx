@@ -1,5 +1,3 @@
-import { IoMdCheckmark } from "react-icons/io";
-
 interface CheckboxProps {
 	id?: string;
 	name: string;
@@ -20,46 +18,70 @@ export default function Checkbox({
 	required,
 }: CheckboxProps) {
 	return (
-		<>
-			<div className="flex items-center gap-2">
-				<div className="relative flex items-center justify-center">
-					<style>
-						{`
-          .checkbox-input:not(:checked):not(:active):hover {
-            background-color: #f9fafb;
-          }
-        `}
-					</style>
+		<div className="flex items-center gap-2">
+			<div className="relative flex items-center justify-center">
+				<style>
+					{`
+			  .checkbox-input:not(:checked):not(:active):hover {
+				background-color: #f9fafb;
+			  }
+			  
+			  .checkmark-path {
+				stroke-dasharray: 23; /* Ditambah karena path lebih panjang */
+				stroke-dashoffset: 23; /* Disesuaikan dengan stroke-dasharray */
+				transition: stroke-dashoffset 250ms ease-in-out;
+			  }
+			  
+			  .checkbox-input:checked + div .checkmark-path {
+				stroke-dashoffset: 0;
+			  }
+			`}
+				</style>
 
-					<input
-						type="checkbox"
-						id={id}
-						name={name}
-						checked={checked}
-						disabled={disabled}
-						onChange={onChange}
-						required={required}
-						className="checkbox-input peer relative h-[18px] w-[18px] shrink-0 appearance-none rounded-sm border border-gray-300 bg-white checked:border-blue-500 checked:bg-blue-500 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 active:scale-90 transition-all duration-150"
-					/>
-					<div className="pointer-events-none absolute inset-0 flex items-center justify-center text-white">
-						<IoMdCheckmark
-							className={`h-[17px] w-[17px] transition-all duration-200 
-              ${checked ? "opacity-100 scale-100" : "opacity-0 scale-0"} 
-              origin-center`}
+				<input
+					type="checkbox"
+					id={id}
+					name={name}
+					checked={checked}
+					disabled={disabled}
+					onChange={onChange}
+					required={required}
+					className="checkbox-input peer relative h-[18px] w-[18px] shrink-0 appearance-none rounded-sm border border-gray-300 bg-white 
+			  checked:border-blue-500 checked:bg-blue-500 
+			  focus:outline-none focus:ring-1 focus:ring-blue-500/20
+			  disabled:cursor-not-allowed disabled:opacity-50 
+			  active:scale-95 transition-all duration-150"
+				/>
+				<div className="pointer-events-none absolute inset-0 flex items-center justify-center text-white">
+					<svg
+						viewBox="0 0 24 24"
+						className="h-[14px] w-[14px]"
+						fill="none"
+						stroke="currentColor"
+						strokeWidth="3"
+						strokeLinecap="round"
+						strokeLinejoin="round"
+					>
+						<path
+							d="M4 12L9 17L20 5" /* Dimodifikasi untuk garis kanan yang lebih panjang */
+							className={`checkmark-path ${
+								checked ? "opacity-100" : "opacity-0"
+							}`}
 						/>
-					</div>
+					</svg>
 				</div>
+			</div>
 
-				{/* Label with pointer-events-none */}
+			{label && (
 				<label
 					htmlFor={id}
-					className={`text-sm ${
+					className={`select-none text-sm ${
 						disabled ? "text-gray-400" : "text-gray-500"
-					} pointer-events-none`}
+					}`}
 				>
 					{label}
 				</label>
-			</div>
-		</>
+			)}
+		</div>
 	);
 }
