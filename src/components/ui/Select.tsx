@@ -67,7 +67,7 @@ export default function Select({
 					disabled
 						? "cursor-not-allowed opacity-50"
 						: "hover:border-gray-300"
-				} focus:outline-none  transition-all duration-200  focus:ring-1 focus:ring-blue-500`}
+				} focus:outline-none  transition-all duration-200  focus:ring-1 focus:ring-accent`}
 				disabled={disabled}
 			>
 				<span className="text-left">

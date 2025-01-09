@@ -40,9 +40,9 @@ export default function RadioButton({
 						checked={checked}
 						disabled={disabled}
 						onChange={onChange}
-						className="radio-input peer relative h-[18px] w-[18px] shrink-0 appearance-none rounded-full border border-gray-300 bg-white checked:border-blue-500 checked:bg-white focus:border-blue-500 active:border-blue-500 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 active:scale-90 transition-all duration-150"
+						className="radio-input peer relative h-[18px] w-[18px] shrink-0 appearance-none rounded-full border border-gray-300 bg-white checked:border-accent checked:bg-white focus:border-accent active:border-accent focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 active:scale-90 transition-all duration-150"
 					/>
-					<div className="pointer-events-none absolute inset-0 flex items-center justify-center text-blue-500">
+					<div className="pointer-events-none absolute inset-0 flex items-center justify-center text-accent">
 						<FaCircle
 							className={`h-[10px] w-[10px] transition-all duration-200 
                 ${checked ? "opacity-100 scale-100" : "opacity-0 scale-0"} 

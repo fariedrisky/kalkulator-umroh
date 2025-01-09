@@ -47,8 +47,8 @@ export default function Checkbox({
 					onChange={onChange}
 					required={required}
 					className="checkbox-input peer relative h-[18px] w-[18px] shrink-0 appearance-none rounded-sm border border-gray-300 bg-white 
-			  checked:border-blue-500 checked:bg-blue-500 
-			  focus:outline-none focus:ring-1 focus:ring-blue-500/20
+			  checked:border-accent checked:bg-accent 
+			  focus:outline-none focus:ring-1 focus:ring-accent/20
 			  disabled:cursor-not-allowed disabled:opacity-50 
 			  active:scale-95 transition-all duration-150"
 				/>

@@ -35,13 +35,13 @@ export const ScrollToTop = () => {
 	return (
 		<button
 			onClick={scrollToTop}
-			className={`fixed bottom-4 right-4 z-50 rounded-full bg-white p-2 shadow-lg transition-all duration-300 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:hover:bg-gray-700 ${
+			className={`fixed bottom-4 right-4 z-50 rounded-full bg-white p-2 shadow-lg transition-all duration-300 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-accent dark:bg-gray-800 dark:hover:bg-gray-700 ${
 				isVisible ? "opacity-100" : "opacity-0"
 			} pointer-events-auto`}
 			aria-label="Scroll to top"
 			style={{ transition: "opacity 0.3s ease" }}
 		>
-			<ArrowUpCircle className="h-8 w-8 text-primary" />
+			<ArrowUpCircle className="h-8 w-8 text-accent" />
 		</button>
 	);
 };

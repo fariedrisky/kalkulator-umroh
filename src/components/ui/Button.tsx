@@ -23,7 +23,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
 		// Variant styles
 		const variantStyles = {
-			default: "bg-primary text-white shadow hover:bg-primary/80",
+			default: "bg-accent text-white shadow hover:bg-accent/80",
 			destructive: "bg-red-600 text-white shadow-sm hover:bg-red-700",
 			outline:
 				"border border-gray-300 bg-white shadow-sm hover:bg-gray-100 hover:text-gray-900",

@@ -205,12 +205,12 @@ export default function DatePicker({
 
 	const renderDays = () => (
 		<>
-			<div className="mb-2 grid grid-cols-7 gap-1">
+			<div className="mb-1 grid grid-cols-7 gap-0.5">
 				{["Min", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"].map(
 					(day) => (
 						<div
 							key={day}
-							className="text-center text-sm font-medium text-gray-500"
+							className="text-center text-xs font-medium text-gray-500"
 						>
 							{day}
 						</div>
@@ -218,7 +218,7 @@ export default function DatePicker({
 				)}
 			</div>
 
-			<div className="grid grid-cols-7 gap-1">
+			<div className="grid grid-cols-7 gap-0.5">
 				{getDaysInMonth().map((day, index) => {
 					const isSelected = value ? isSameDay(day, value) : false;
 					const isCurrentMonth = isSameMonth(day, currentMonth);
@@ -232,30 +232,22 @@ export default function DatePicker({
 							onClick={() => handleDaySelect(day)}
 							disabled={isDisabled || disabled}
 							className={`
-                flex h-8 w-8 items-center justify-center rounded-lg text-sm
-                transition-all duration-200 ease-in-out
-                ${!isCurrentMonth ? "text-gray-300" : ""}
-                ${
-					isSelected && !isDisabled
-						? "bg-blue-500 text-white hover:bg-blue-600"
-						: ""
-				}
-                ${
-					!isSelected && isCurrentMonth && !isDisabled
-						? "hover:bg-gray-100"
-						: ""
-				}
-                ${
-					isCurrentDay && !isSelected && !isDisabled
-						? "border border-blue-500 text-blue-500"
-						: ""
-				}
-                ${
-					isDisabled || disabled
-						? "cursor-not-allowed text-gray-300 hover:bg-white"
-						: "hover:scale-110"
-				}
-              `}
+					flex h-6 w-6 md:h-8 md:w-8 items-center justify-center rounded-md text-xs md:text-sm
+					transition-all duration-200 ease-in-out
+					${!isCurrentMonth ? "text-gray-300" : ""}
+					${isSelected && !isDisabled ? "bg-accent text-white hover:bg-blue-600" : ""}
+					${!isSelected && isCurrentMonth && !isDisabled ? "hover:bg-gray-100" : ""}
+					${
+						isCurrentDay && !isSelected && !isDisabled
+							? "border border-accent text-accent"
+							: ""
+					}
+					${
+						isDisabled || disabled
+							? "cursor-not-allowed text-gray-300 hover:bg-white"
+							: "hover:scale-105"
+					}
+				  `}
 						>
 							{format(day, "d")}
 						</button>
@@ -266,7 +258,7 @@ export default function DatePicker({
 	);
 
 	const renderMonths = () => (
-		<div className="grid grid-cols-4 gap-2">
+		<div className="grid grid-cols-4 gap-1 md:gap-2">
 			{months.map((month, index) => {
 				const isSelected = currentMonth.getMonth() === index;
 				const isCurrent =
@@ -280,16 +272,16 @@ export default function DatePicker({
 						onClick={(e) => handleMonthSelect(e, index)}
 						disabled={disabled}
 						className={`
-              p-2 text-sm rounded-lg transition-all duration-200
-              ${
-					isSelected
-						? "bg-blue-500 text-white hover:bg-blue-600"
-						: isCurrent
-						? "border border-blue-500 text-blue-500 hover:bg-gray-100"
-						: "hover:bg-gray-100"
-				}
-              ${!disabled && "hover:scale-105"}
-            `}
+				  p-1 md:p-2 text-xs md:text-sm rounded-md transition-all duration-200
+				  ${
+						isSelected
+							? "bg-accent text-white hover:bg-blue-600"
+							: isCurrent
+							? "border border-accent text-accent hover:bg-gray-100"
+							: "hover:bg-gray-100"
+					}
+				  ${!disabled && "hover:scale-105"}
+				`}
 					>
 						{month}
 					</button>
@@ -314,9 +306,9 @@ export default function DatePicker({
               p-2 text-sm rounded-lg transition-all duration-200
               ${
 					isSelected
-						? "bg-blue-500 text-white hover:bg-blue-600"
+						? "bg-accent text-white hover:bg-blue-600"
 						: isCurrent
-						? "border border-blue-500 text-blue-500 hover:bg-gray-100"
+						? "border border-accent text-accent hover:bg-gray-100"
 						: "hover:bg-gray-100"
 				}
               ${
@@ -357,19 +349,19 @@ export default function DatePicker({
 		}
 
 		return (
-			<div className="mb-4 flex items-center justify-between">
+			<div className="mb-2 md:mb-4 flex items-center justify-between">
 				<button
 					type="button"
 					onClick={onPrevious}
-					className="rounded-full p-1 transition-all duration-200 hover:bg-gray-100 hover:scale-110 active:scale-95"
+					className="rounded-full p-0.5 md:p-1 transition-all duration-200 hover:bg-gray-100 hover:scale-105"
 					disabled={disabled}
 				>
-					<ChevronLeft className="h-5 w-5" />
+					<ChevronLeft className="h-4 w-4 md:h-5 md:w-5" />
 				</button>
 				<button
 					type="button"
 					onClick={handleViewChange}
-					className="px-2 py-1 rounded-lg font-semibold transition-all duration-200 hover:bg-gray-100 hover:scale-105"
+					className="px-1.5 py-0.5 md:px-2 md:py-1 rounded-md text-sm md:text-base font-semibold transition-all duration-200 hover:bg-gray-100 hover:scale-105"
 					disabled={disabled}
 				>
 					{title}
@@ -377,10 +369,10 @@ export default function DatePicker({
 				<button
 					type="button"
 					onClick={onNext}
-					className="rounded-full p-1 transition-all duration-200 hover:bg-gray-100 hover:scale-110 active:scale-95"
+					className="rounded-full p-0.5 md:p-1 transition-all duration-200 hover:bg-gray-100 hover:scale-105"
 					disabled={disabled}
 				>
-					<ChevronRight className="h-5 w-5" />
+					<ChevronRight className="h-4 w-4 md:h-5 md:w-5" />
 				</button>
 			</div>
 		);
@@ -439,7 +431,7 @@ export default function DatePicker({
             border border-gray-300 bg-white p-2 px-3 py-2 text-sm
             transition-all duration-200 
             hover:bg-gray-50 
-            focus-within:ring-1 focus-within:ring-blue-500
+            focus-within:ring-1 focus-within:ring-accent
             ${error ? "border-red-500" : ""}
             ${disabled ? "cursor-not-allowed pointer-events-none" : ""}
           `}

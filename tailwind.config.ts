@@ -13,55 +13,54 @@ export default {
 			fontFamily: {
 				serif: ["var(--font-gabriela)"],
 			},
-
 			colors: {
-				background: 'hsl(var(--background))',
-				foreground: 'hsl(var(--foreground))',
+				background: "#FFFFFF",
+				foreground: "#090A0C",
 				card: {
-					DEFAULT: 'hsl(var(--card))',
-					foreground: 'hsl(var(--card-foreground))'
+					DEFAULT: "#FFFFFF",
+					foreground: "#090A0C",
 				},
 				popover: {
-					DEFAULT: 'hsl(var(--popover))',
-					foreground: 'hsl(var(--popover-foreground))'
+					DEFAULT: "#FFFFFF",
+					foreground: "#090A0C",
 				},
 				primary: {
-					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					DEFAULT: "#1A1B1E",
+					foreground: "#FAFAFA",
 				},
 				secondary: {
-					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
+					DEFAULT: "#F4F4F5",
+					foreground: "#1A1B1E",
 				},
 				muted: {
-					DEFAULT: 'hsl(var(--muted))',
-					foreground: 'hsl(var(--muted-foreground))'
+					DEFAULT: "#F4F4F5",
+					foreground: "#737578",
 				},
 				accent: {
-					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))'
+					DEFAULT: "#894b1c",
+					foreground: "#1A1B1E",
 				},
 				destructive: {
-					DEFAULT: 'hsl(var(--destructive))',
-					foreground: 'hsl(var(--destructive-foreground))'
+					DEFAULT: "#EA4E3D",
+					foreground: "#FAFAFA",
 				},
-				border: 'hsl(var(--border))',
-				input: 'hsl(var(--input))',
-				ring: 'hsl(var(--ring))',
+				border: "#E4E4E7",
+				input: "#E4E4E7",
+				ring: "#090A0C",
 				chart: {
-					'1': 'hsl(var(--chart-1))',
-					'2': 'hsl(var(--chart-2))',
-					'3': 'hsl(var(--chart-3))',
-					'4': 'hsl(var(--chart-4))',
-					'5': 'hsl(var(--chart-5))'
-				}
+					1: "#F76B48",
+					2: "#2A9D8F",
+					3: "#264653",
+					4: "#EEC64C",
+					5: "#F4743B",
+				},
 			},
 			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
-			}
-		}
+				lg: "0.5rem",
+				md: "0.375rem",
+				sm: "0.25rem",
+			},
+		},
 	},
 	plugins: [tailwindAnimate],
 } satisfies Config;
